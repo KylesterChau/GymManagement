@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Kyle\\Documents\\Visual studio code side proj\\New folder\\GymManagement\\GymManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\GymManagement.styles.css",
+      "PackagePath": "staticwebassets\\GymManagement.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Kyle\\Documents\\Visual studio code side proj\\New folder\\GymManagement\\GymManagement\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Kyle\\Documents\\Visual studio code side proj\\New folder\\GymManagement\\GymManagement\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Kyle\\Documents\\Visual studio code side proj\\New folder\\GymManagement\\GymManagement\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Kyle\\Documents\\Visual studio code side proj\\New folder\\GymManagement\\GymManagement\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Kyle\\Documents\\Visual studio code side proj\\New folder\\GymManagement\\GymManagement\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.GymManagement.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.GymManagement.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.build.GymManagement.props",
+      "PackagePath": "build\\GymManagement.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.buildMultiTargeting.GymManagement.props",
+      "PackagePath": "buildMultiTargeting\\GymManagement.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.buildTransitive.GymManagement.props",
+      "PackagePath": "buildTransitive\\GymManagement.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
