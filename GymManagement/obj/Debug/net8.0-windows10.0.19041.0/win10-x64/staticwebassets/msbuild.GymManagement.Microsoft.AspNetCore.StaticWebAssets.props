@@ -84,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>9eqvefl0iu</Fingerprint>
-      <Integrity>n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU=</Integrity>
+      <Fingerprint>hftf2ebqd0</Fingerprint>
+      <Integrity>Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\GymManagement.styles.css'))</OriginalItemSpec>

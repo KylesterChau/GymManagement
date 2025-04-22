@@ -1,12 +1,73 @@
-﻿@page "/manageMembers"
+﻿@page "/manageMembers"  
 
+@using MySql.Data.MySqlClient  
+@using MySql.Data  
 
-<!--@using MySql.Data.MySqlClient
-@using MySql.Data-->
-<!--To Do
-	- Add equipment
-	- Mark equipment as in maintenance/broken
-	- View Equipment availability
--->
-@code {
+<h3>Member Manager</h3>  
+
+<div>  
+<label for="membershipID">Membership ID:</label>  
+<input id="membershipID" type="number" @bind="MembershipID" />  
+</div>  
+
+<div>  
+<label for="memberName">Member Name:</label>  
+<input id="memberName" type="text" @bind="MemberName" />  
+</div>  
+
+<div>  
+<label for="startDate">Start Date:</label>  
+<input id="startDate" type="date" @bind="StartDate" />  
+</div>  
+
+<div>  
+<label for="endDate">End Date:</label>  
+<input id="endDate" type="date" @bind="EndDate" />  
+</div>  
+
+<div>  
+<label for="membershipFee">Membership Fee:</label>  
+<input id="membershipFee" type="number" @bind="MembershipFee" />  
+</div>  
+
+<div>  
+<button @onclick="AddMemberAsync">Add Member</button>  
+<button @onclick="UpdateMemberAsync">Update Member</button>  
+<button @onclick="DeleteMemberAsync">Delete Member</button>  
+<button @onclick="GetMemberDetailsAsync">Get Member Details</button>  
+</div>  
+
+@code {  
+  private int MembershipID { get; set; }  
+  private string MemberName { get; set; }  
+  private DateTime StartDate { get; set; }  
+  private DateTime EndDate { get; set; }  
+  private decimal MembershipFee { get; set; }  
+
+  private async Task AddMemberAsync()  
+  {  
+      // To Do: Implement logic to add a member  
+  }  
+
+  private async Task UpdateMemberAsync()  
+  {  
+      // To Do: Implement logic to update a member  
+  }  
+
+  private async Task DeleteMemberAsync()  
+  {  
+      // To Do: Implement logic to delete a member  
+  }  
+
+  private async Task GetMemberDetailsAsync()  
+  {  
+      // To Do: Implement logic to get member details  
+  }  
+
+  private MySqlConnection CreateDatabaseConnection()  
+  {  
+      string connectionString = ""; // To Do: Add connection string  
+      MySqlConnection connection = new MySqlConnection(connectionString);  
+      return connection;  
+  }  
 }

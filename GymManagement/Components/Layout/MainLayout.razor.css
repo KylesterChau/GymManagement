@@ -75,3 +75,100 @@ main {
         padding-right: 1.5rem !important;
     }
 }
+
+.page {
+    background: black;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-header {
+    background: #1e1e1e;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+    .app-header button {
+        background: none;
+        border: none;
+        color: #ff0000;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+#dropdownMenu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #1e1e1e;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    display: none;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px;
+    color: #ff4d4d;
+    text-decoration: none;
+}
+
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .content-container h1 {
+        font-size: 48px;
+        color: #ff0000;
+        text-shadow: 0 0 20px #ff4d4d;
+    }
+
+    .content-container input {
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ff0000;
+        border-radius: 5px;
+        background: #121212;
+        color: #fff;
+        font-size: 16px;
+    }
+
+        .content-container input[type="password"] {
+            margin-bottom: 20px;
+        }
+
+    .content-container button {
+        background: linear-gradient(135deg, #ff0000, #ff4d4d);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 10px #ff0000;
+    }
+
+.app-footer {
+    background: #1e1e1e;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+    .app-footer p {
+        margin: 0;
+        color: #ff0000;
+    }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CsVcfAI2nQGzA/JflnjcS8lXfRRzjZXYwG7sJvmtmew=",
+  "Hash": "f2qppdMi3xyqz75Z6MIXQQwDgwg7Hc+YYpxFVS7PKd8=",
   "Source": "GymManagement",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "9eqvefl0iu",
-      "Integrity": "n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU=",
+      "Fingerprint": "hftf2ebqd0",
+      "Integrity": "Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\spenc\\Source\\Repos\\GymManagement\\GymManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\GymManagement.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "9eqvefl0iu",
-      "Integrity": "n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU=",
+      "Fingerprint": "hftf2ebqd0",
+      "Integrity": "Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\spenc\\Source\\Repos\\GymManagement\\GymManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\GymManagement.bundle.scp.css"
@@ -494,96 +494,6 @@
       ]
     },
     {
-      "Route": "GymManagement.9eqvefl0iu.bundle.scp.css",
-      "AssetFile": "C:\\Users\\spenc\\Source\\Repos\\GymManagement\\GymManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\GymManagement.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5481"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 22 Apr 2025 03:10:49 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "9eqvefl0iu"
-        },
-        {
-          "Name": "label",
-          "Value": "GymManagement.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU="
-        }
-      ]
-    },
-    {
-      "Route": "GymManagement.9eqvefl0iu.styles.css",
-      "AssetFile": "C:\\Users\\spenc\\Source\\Repos\\GymManagement\\GymManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\GymManagement.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5481"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 22 Apr 2025 03:10:49 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "9eqvefl0iu"
-        },
-        {
-          "Name": "label",
-          "Value": "GymManagement.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU="
-        }
-      ]
-    },
-    {
       "Route": "GymManagement.bundle.scp.css",
       "AssetFile": "C:\\Users\\spenc\\Source\\Repos\\GymManagement\\GymManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\GymManagement.bundle.scp.css",
       "Selectors": [],
@@ -594,7 +504,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5481"
+          "Value": "7656"
         },
         {
           "Name": "Content-Type",
@@ -602,11 +512,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU=\""
+          "Value": "\"Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 22 Apr 2025 03:10:49 GMT"
+          "Value": "Tue, 22 Apr 2025 21:13:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -616,7 +526,97 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU="
+          "Value": "sha256-Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk="
+        }
+      ]
+    },
+    {
+      "Route": "GymManagement.hftf2ebqd0.bundle.scp.css",
+      "AssetFile": "C:\\Users\\spenc\\Source\\Repos\\GymManagement\\GymManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\GymManagement.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7656"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 21:13:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hftf2ebqd0"
+        },
+        {
+          "Name": "label",
+          "Value": "GymManagement.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk="
+        }
+      ]
+    },
+    {
+      "Route": "GymManagement.hftf2ebqd0.styles.css",
+      "AssetFile": "C:\\Users\\spenc\\Source\\Repos\\GymManagement\\GymManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\GymManagement.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7656"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 21:13:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hftf2ebqd0"
+        },
+        {
+          "Name": "label",
+          "Value": "GymManagement.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk="
         }
       ]
     },
@@ -631,7 +631,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5481"
+          "Value": "7656"
         },
         {
           "Name": "Content-Type",
@@ -639,11 +639,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU=\""
+          "Value": "\"Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 22 Apr 2025 03:10:49 GMT"
+          "Value": "Tue, 22 Apr 2025 21:13:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -653,7 +653,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-n6485n4nodeLgkqtjKVunBTb5G6FVFFmWKVjXclzevU="
+          "Value": "sha256-Q1P3a8EK1uWaCK/GtgFgtbwHbXvM6ytKdvZzsUHSEWk="
         }
       ]
     },
