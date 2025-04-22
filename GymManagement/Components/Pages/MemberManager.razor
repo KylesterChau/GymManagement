@@ -1,74 +1,122 @@
 ﻿@page "/manageMembers"  
 
 @using MySql.Data.MySqlClient  
-@using MySql.Data  
-@using GymManagementApplication.Classes
 
 <h3>Member Manager</h3>  
 
 <div>  
-<label for="membershipID">Membership ID:</label>  
-<input id="membershipID" type="number" @bind="MembershipID" />  
+   <label for="membershipID">Membership ID:</label>  
+   <input id="membershipID" type="number" @bind="currentMember.MembershipID" />  
 </div>  
 
 <div>  
-<label for="memberName">Member Name:</label>  
-<input id="memberName" type="text" @bind="MemberName" />  
+   <label for="memberName">Member Name:</label>  
+   <input id="memberName" type="text" @bind="currentMember.MemberName" />  
 </div>  
 
 <div>  
-<label for="startDate">Start Date:</label>  
-<input id="startDate" type="date" @bind="StartDate" />  
+   <label for="startDate">Start Date:</label>  
+   <input id="startDate" type="date" @bind="currentMember.StartDate" />  
 </div>  
 
 <div>  
-<label for="endDate">End Date:</label>  
-<input id="endDate" type="date" @bind="EndDate" />  
+   <label for="endDate">End Date:</label>  
+   <input id="endDate" type="date" @bind="currentMember.EndDate" />  
 </div>  
 
 <div>  
-<label for="membershipFee">Membership Fee:</label>  
-<input id="membershipFee" type="number" @bind="MembershipFee" />  
+   <label for="membershipFee">Membership Fee:</label>  
+   <input id="membershipFee" type="number" @bind="currentMember.MembershipFee" />  
 </div>  
 
 <div>  
-<button @onclick="AddMemberAsync">Add Member</button>  
-<button @onclick="UpdateMemberAsync">Update Member</button>  
-<button @onclick="DeleteMemberAsync">Delete Member</button>  
-<button @onclick="GetMemberDetailsAsync">Get Member Details</button>  
+   <button @onclick="AddMemberAsync">Add Member</button>  
+   <button @onclick="UpdateMemberAsync">Update Member</button>  
+   <button @onclick="DeleteMemberAsync">Delete Member</button>  
+   <button @onclick="GetMemberDetailsAsync">Get Member Details</button>  
 </div>  
 
 @code {  
-  private int MembershipID { get; set; }  
-  private string MemberName { get; set; }  
-  private DateTime StartDate { get; set; }  
-  private DateTime EndDate { get; set; }  
-  private double MembershipFee { get; set; }  
+   private Member currentMember = new Member();  
+   private List<Member> members = new List<Member>();  
 
-  private async Task AddMemberAsync()  
-  {  
-      // To Do: Implement logic to add a member  
-  }  
+   private async Task AddMemberAsync()  
+   {  
 
-  private async Task UpdateMemberAsync()  
-  {  
-      // To Do: Implement logic to update a member  
-  }  
 
-  private async Task DeleteMemberAsync()  
-  {  
-      // To Do: Implement logic to delete a member  
-  }  
+       members.Add(new Member  
+       {  
+           MembershipID = currentMember.MembershipID,  
+           MemberName = currentMember.MemberName,  
+           StartDate = currentMember.StartDate,  
+           EndDate = currentMember.EndDate,  
+           MembershipFee = currentMember.MembershipFee  
+       });  
 
-  private async Task GetMemberDetailsAsync()  
-  {  
-      // To Do: Implement logic to get member details  
-  }  
+       currentMember = new Member();  
+   }  
 
-  private MySqlConnection CreateDatabaseConnection()  
-  {  
-      string connectionString = ""; // To Do: Add connection string  
-      MySqlConnection connection = new MySqlConnection(connectionString);  
-      return connection;  
-  }  
+   private async Task UpdateMemberAsync()  
+   {  
+       // To Do: Implement logic to update a member  
+   }  
+
+   private async Task DeleteMemberAsync()  
+   {  
+       // To Do: Implement logic to delete a member  
+   }  
+
+   private async Task GetMemberDetailsAsync()  
+   {  
+       // To Do: Implement logic to get member details  
+   }  
+}  
+
+@code {  
+   public class Member : Membership  
+   {  
+       public int MembershipID { get; set; }  
+       public string MemberName { get; set; }  
+       public DateTime StartDate { get; set; }  
+       public DateTime EndDate { get; set; }  
+       public double MembershipFee { get; set; }  
+
+       protected override double CalculateMembershipFee()  
+       {  
+           // Implementation for calculating membership fee  
+           return 0.0; // Placeholder return value  
+       }  
+   }  
+
+   public abstract class Membership  
+   {  
+       public int MembershipID { get; set; }  
+       public string MemberName { get; set; }  
+       public DateTime StartDate { get; set; }  
+       public DateTime EndDate { get; set; }  
+       public double MembershipFee { get; set; }  
+
+       protected abstract double CalculateMembershipFee();  
+       protected virtual string GetMembershipDetails()  
+       {  
+           return $"Membership ID: {MembershipID}\n" +  
+                  $"Member Name: {MemberName}\n" +  
+                  $"Start Date: {StartDate.ToShortDateString()}\n" +  
+                  $"Membership Fee: {MembershipFee:C}";  
+       }  
+   }  
+
+   private void MySqlConnection()  
+   {  
+       MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder  
+       {  
+           Server = "sql3.freesqldatabase.com",  
+           UserID = "sql3774599",  
+           Password = "4SbFn7kpp9",  
+           Database = "sql3774599",  
+       };  
+       using MySqlConnection connection = new MySqlConnection(connectionString.ToString());  
+       connection.Open();  
+       connection.Close();  
+   }  
 }
