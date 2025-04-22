@@ -11,7 +11,9 @@ namespace GymManagementApplication.Classes
         int membershipID { get; set; }
         string memberName { get; set; }
         DateTime startDate { get; set; }
+        DateTime endDate { get; set; }
         double membershipFee { get; set; }
+
  
         protected abstract double CalculateMembershipFee();
         protected virtual string GetMembershipDetails()

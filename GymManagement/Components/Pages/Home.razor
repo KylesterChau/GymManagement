@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using MySqlConnector
 <!--@using MySql.Data.MySqlClient
 @using MySql.Data-->
 <!--To Do
@@ -6,6 +7,30 @@
 	- View Equipment
 	- Generate management reports
 -->
+<div class="content-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
+	<h1 style="font-size: 48px; color: #ff0000; text-shadow: 0 0 20px #ff4d4d;">Welcome to GymGo Terminal</h1>
+	<div style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
+		<input type="text" placeholder="Username" style="margin-bottom: 10px; padding: 10px; width: 300px; border: 1px solid #ff0000; border-radius: 5px; background: #121212; color: #fff; font-size: 16px;" @bind="username" />
+		<input type="password" placeholder="Password" style="margin-bottom: 20px; padding: 10px; width: 300px; border: 1px solid #ff0000; border-radius: 5px; background: #121212; color: #fff; font-size: 16px;" @bind="password" />
+		<button style="background: linear-gradient(135deg, #ff0000, #ff4d4d); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease-in-out; box-shadow: 0 0 10px #ff0000;" @onclick="OnLoginClicked">Login</button>
+	</div>
+</div>
 @code {
+	private string username;
+	private string password;
+	private bool loggedIn = false;
 
+	private void OnLoginClicked()
+	{
+		MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder
+			{
+				Server = "localhost",
+				UserID = "root",
+				Password = "password",
+				Database = "temp",
+			};
+		MySqlConnection connection = new MySqlConnection(connectionString.ToString());
+		connection.Open();
+		connection.Close();
+	}
 }

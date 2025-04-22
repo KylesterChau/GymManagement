@@ -14,6 +14,7 @@ namespace GymManagementApplication.Classes
         public DateTime EndDate { get; set; }
         public double MembershipFee { get; set; }
 
+
         public Member(int membershipID, string memberName, DateTime startDate, DateTime endDate, double membershipFee)
         {
             MembershipID = membershipID;
