@@ -677,3 +677,4 @@ C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\w
 C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\spenc\Source\Repos\GymManagement\GymManagement\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MySqlConnector.dll

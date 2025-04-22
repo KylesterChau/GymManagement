@@ -2,6 +2,7 @@
 
 @using MySql.Data.MySqlClient  
 @using MySql.Data  
+@using GymManagementApplication.Classes
 
 <h3>Member Manager</h3>  
 
@@ -42,7 +43,7 @@
   private string MemberName { get; set; }  
   private DateTime StartDate { get; set; }  
   private DateTime EndDate { get; set; }  
-  private decimal MembershipFee { get; set; }  
+  private double MembershipFee { get; set; }  
 
   private async Task AddMemberAsync()  
   {  

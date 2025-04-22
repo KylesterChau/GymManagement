@@ -75,3 +75,100 @@ main[b-5s81hl0xtx] {
         padding-right: 1.5rem !important;
     }
 }
+
+.page[b-5s81hl0xtx] {
+    background: black;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-header[b-5s81hl0xtx] {
+    background: #1e1e1e;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+    .app-header button[b-5s81hl0xtx] {
+        background: none;
+        border: none;
+        color: #ff0000;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+#dropdownMenu[b-5s81hl0xtx] {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #1e1e1e;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    display: none;
+}
+
+.dropdown-item[b-5s81hl0xtx] {
+    display: block;
+    padding: 10px;
+    color: #ff4d4d;
+    text-decoration: none;
+}
+
+.content-container[b-5s81hl0xtx] {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .content-container h1[b-5s81hl0xtx] {
+        font-size: 48px;
+        color: #ff0000;
+        text-shadow: 0 0 20px #ff4d4d;
+    }
+
+    .content-container input[b-5s81hl0xtx] {
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ff0000;
+        border-radius: 5px;
+        background: #121212;
+        color: #fff;
+        font-size: 16px;
+    }
+
+        .content-container input[type="password"][b-5s81hl0xtx] {
+            margin-bottom: 20px;
+        }
+
+    .content-container button[b-5s81hl0xtx] {
+        background: linear-gradient(135deg, #ff0000, #ff4d4d);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 10px #ff0000;
+    }
+
+.app-footer[b-5s81hl0xtx] {
+    background: #1e1e1e;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+    .app-footer p[b-5s81hl0xtx] {
+        margin: 0;
+        color: #ff0000;
+    }
