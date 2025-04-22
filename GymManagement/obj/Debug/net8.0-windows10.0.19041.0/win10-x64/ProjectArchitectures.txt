@@ -1,1 +1,1 @@
-C:\Users\Kyle\Documents\Visual studio code side proj\New folder\GymManagement\GymManagement\GymManagement.csproj;x64
+C:\Users\spenc\Source\Repos\GymManagement\GymManagement\GymManagement.csproj;x64
