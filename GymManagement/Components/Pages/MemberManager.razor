@@ -2,128 +2,236 @@
 
 @using MySql.Data.MySqlClient  
 
-<h3>Member Manager</h3>  
+<h3 class="text-center text-primary">Member Manager</h3>
 
-<div>  
-  <label for="membershipID">Membership ID:</label>  
-  <input id="membershipID" type="number" @bind="currentMember.MembershipID" />  
-</div>  
+<div class="container mt-4">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="membershipID" class="form-label">Membership ID:</label>
+            <input id="membershipID" type="number" class="form-control" @bind="currentMember.MembershipID" />
+        </div>
+    </div>
 
-<div>  
-  <label for="memberName">Member Name:</label>  
-  <input id="memberName" type="text" @bind="currentMember.MemberName" />  
-</div>  
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="memberName" class="form-label">Member Name:</label>
+            <input id="memberName" type="text" class="form-control" @bind="currentMember.MemberName" />
+        </div>
+    </div>
 
-<div>  
-  <label for="startDate">Start Date:</label>  
-  <input id="startDate" type="date" @bind="currentMember.StartDate" />  
-</div>  
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="startDate" class="form-label">Start Date:</label>
+            <input id="startDate" type="date" class="form-control" @bind="currentMember.StartDate" />
+        </div>
+    </div>
 
-<div>  
-  <label for="endDate">End Date:</label>  
-  <input id="endDate" type="date" @bind="currentMember.EndDate" />  
-</div>  
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="endDate" class="form-label">End Date:</label>
+            <input id="endDate" type="date" class="form-control" @bind="currentMember.EndDate" />
+        </div>
+    </div>
 
-<div>  
-  <label for="membershipFee">Membership Fee:</label>  
-  <input id="membershipFee" type="number" @bind="currentMember.MembershipFee" />  
-</div>  
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="membershipFee" class="form-label">Membership Fee:</label>
+            <input id="membershipFee" type="number" class="form-control" @bind="currentMember.MembershipFee" />
+        </div>
+    </div>
 
-<div>  
-  <button @onclick="AddMemberAsync">Add Member</button>  
-  <button @onclick="UpdateMemberAsync">Update Member</button>  
-  <button @onclick="DeleteMemberAsync">Delete Member</button>  
-  <button @onclick="GetMemberDetailsAsync">Get Member Details</button>  
-</div>  
+    <div class="row mt-4">
+        <div class="col-md-6 d-flex justify-content-between">
+            <button class="btn btn-success" @onclick="AddMemberAsync">Add Member</button>
+            <button class="btn btn-primary" @onclick="UpdateMemberAsync">Update Member</button>
+            <button class="btn btn-danger" @onclick="DeleteMemberAsync">Delete Member</button>
+            <button class="btn btn-info" @onclick="LoadMembers">Get Member Details</button>
+        </div>
+    </div>
+</div>
 
 @code {  
-  @code {  
-   private Member currentMember = new Member();  
-   private List<Member> members = new List<Member>();  
+    @code {  
+       private Member currentMember = new Member();  
+       private List<Member> members = new List<Member>();  
 
-   private readonly string connectionString = new MySqlConnectionStringBuilder  
-   {  
-       Server = "sql3.freesqldatabase.com",  
-       UserID = "sql3774599",  
-       Password = "4SbFn7kpp9",  
-       Database = "sql3774599",  
-   }.ToString();  
-
-   private async Task AddMemberAsync()  
-   {  
-       using (MySqlConnection connection = new MySqlConnection(connectionString))  
+       private readonly string connectionString = new MySqlConnectionStringBuilder  
        {  
-           await connection.OpenAsync();  
+           Server = "sql3.freesqldatabase.com",  
+           UserID = "sql3774599",  
+           Password = "4SbFn7kpp9",  
+           Database = "sql3774599",  
+       }.ToString();  
 
-           string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +  
-                          "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";  
-
-           using (MySqlCommand cmd = new MySqlCommand(query, connection))  
+       /// <summary>  
+       /// Adds a new member to the database and updates the local members list.  
+       /// </summary>  
+       private async Task AddMemberAsync()  
+       {  
+           using (MySqlConnection connection = new MySqlConnection(connectionString))  
            {  
-               cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
-               cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
-               cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
-               cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
-               cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
+               await connection.OpenAsync();  
 
-               await cmd.ExecuteNonQueryAsync();  
+               string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +  
+                              "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";  
+
+               using (MySqlCommand cmd = new MySqlCommand(query, connection))  
+               {  
+                   cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+                   cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
+                   cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
+                   cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
+                   cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
+
+                   await cmd.ExecuteNonQueryAsync();  
+               }  
+           }  
+
+           members.Add(new Member  
+           {  
+               MembershipID = currentMember.MembershipID,  
+               MemberName = currentMember.MemberName,  
+               StartDate = currentMember.StartDate,  
+               EndDate = currentMember.EndDate,  
+               MembershipFee = currentMember.MembershipFee  
+           });  
+
+           currentMember = new Member();  
+       }  
+
+       /// <summary>  
+       /// Updates an existing member's details in the database and the local members list.  
+       /// </summary>  
+       private async Task UpdateMemberAsync()  
+       {  
+           using (MySqlConnection connection = new MySqlConnection(connectionString))  
+           {  
+               await connection.OpenAsync();  
+
+               string query = "UPDATE member SET membername = @MemberName, start = @StartDate, end = @EndDate, membershipfee = @MembershipFee " +  
+                              "WHERE membershipid = @MembershipID";  
+
+               using (MySqlCommand cmd = new MySqlCommand(query, connection))  
+               {  
+                   cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+                   cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
+                   cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
+                   cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
+                   cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
+
+                   await cmd.ExecuteNonQueryAsync();  
+               }  
+           }  
+
+           Member memberToUpdate = members.FirstOrDefault(m => m.MembershipID == currentMember.MembershipID);  
+           if (memberToUpdate != null)  
+           {  
+               memberToUpdate.MemberName = currentMember.MemberName;  
+               memberToUpdate.StartDate = currentMember.StartDate;  
+               memberToUpdate.EndDate = currentMember.EndDate;  
+               memberToUpdate.MembershipFee = currentMember.MembershipFee;  
+           }  
+
+           currentMember = new Member();  
+       }  
+
+       /// <summary>  
+       /// Loads all members from the database into the local members list.  
+       /// </summary>  
+       private void LoadMembers()  
+       {  
+           using (MySqlConnection connection = new MySqlConnection(connectionString))  
+           {  
+               connection.Open();  
+
+               string query = "SELECT membershipid, membername, start, end, membershipfee FROM member";  
+
+               using (MySqlCommand command = new MySqlCommand(query, connection))  
+               {  
+                   using (MySqlDataReader reader = command.ExecuteReader())  
+                   {  
+                       while (reader.Read())  
+                       {  
+                           members.Add(new Member  
+                           {  
+                               MembershipID = reader.GetInt32(0),  
+                               MemberName = reader.GetString(1),  
+                               StartDate = reader.GetDateTime(2),  
+                               EndDate = reader.GetDateTime(3),  
+                               MembershipFee = reader.GetDouble(4)  
+                           });  
+                       }  
+                   }  
+               }  
            }  
        }  
 
-       members.Add(new Member  
+       /// <summary>  
+       /// Initializes the component by loading members and creating a backup of the original members list.  
+       /// </summary>  
+       protected override void OnInitialized()  
        {  
-           MembershipID = currentMember.MembershipID,  
-           MemberName = currentMember.MemberName,  
-           StartDate = currentMember.StartDate,  
-           EndDate = currentMember.EndDate,  
-           MembershipFee = currentMember.MembershipFee  
-       });  
+           LoadMembers();  
+           originalMembers = members.Select(m => new Member  
+           {  
+               MembershipID = m.MembershipID,  
+               MemberName = m.MemberName,  
+               StartDate = m.StartDate,  
+               EndDate = m.EndDate,  
+               MembershipFee = m.MembershipFee  
+           }).ToList();  
+       }  
 
-       currentMember = new Member();  
-   }  
-  }
-
-  private async Task UpdateMemberAsync()  
-  {  
-      // To Do: Implement logic to update a member  
-  }  
-
+       private List<Member> originalMembers = new List<Member>();  
+    }
   private async Task DeleteMemberAsync()  
   {  
-      // To Do: Implement logic to delete a member  
+    // To Do: Implement logic to delete a member  
   }  
 
-  private async Task GetMemberDetailsAsync()  
-  {  
-      // To Do: Implement logic to get member details  
-  }  
+ 
 }  
 
-@code {  
-  public class Member : Membership  
-  {  
-      public int MembershipID { get; set; }  
-      public string MemberName { get; set; }  
-      public DateTime StartDate { get; set; }  
-      public DateTime EndDate { get; set; }  
-      public double MembershipFee { get; set; }  
+@code {
+    public class Member : Membership  
+    {  
+        public int MembershipID { get; set; }  
+        public string MemberName { get; set; }  
+        public DateTime StartDate { get; set; }  
+        public DateTime EndDate { get; set; }  
+        public double MembershipFee { get; set; }  
 
-      protected override double CalculateMembershipFee()  
-      {  
-          // Implementation for calculating membership fee  
-          return 0.0; // Placeholder return value  
-      }  
-  }  
+        protected override void CalculateMembershipFee()  
+        {  
+            // Implementation for calculating membership fee  
+                       switch (MembershipType)  
+                       {  
+                           case 1:  
+                               MembershipFee = 10.0;  
+                               break;  
+                           case 2:  
+                               MembershipFee = 20.0;  
+                               break;  
+                           case 3:  
+                               MembershipFee = 40.0;  
+                               break;  
+                           default:  
+                               MembershipFee = 0.0; // Default value for unknown membership types  
+                               break;  
+                       }
+        }  
+    }  
 
-  public abstract class Membership  
-  {  
-      public int MembershipID { get; set; }  
-      public string MemberName { get; set; }  
-      public DateTime StartDate { get; set; }  
-      public DateTime EndDate { get; set; }  
-      public double MembershipFee { get; set; }  
+    public abstract class Membership  
+    {  
+        public int MembershipID { get; set; }  
+        public string MemberName { get; set; }  
+        public DateTime StartDate { get; set; }  
+        public DateTime EndDate { get; set; }  
+        public double MembershipFee { get; set; } 
+        public int MembershipType { get; set; }
 
-      protected abstract double CalculateMembershipFee();  
+      protected abstract void CalculateMembershipFee();  
       protected virtual string GetMembershipDetails()  
       {  
           return $"Membership ID: {MembershipID}\n" +  
