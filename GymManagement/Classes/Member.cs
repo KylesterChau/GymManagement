@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymManagementApplication.Classes
 {
-    class Member : Membership
+     class Member : Membership
     {
         public int MembershipID { get; set; }
         public string MemberName { get; set; }
@@ -14,8 +14,8 @@ namespace GymManagementApplication.Classes
         public DateTime EndDate { get; set; }
         public double MembershipFee { get; set; }
 
-
         public Member(int membershipID, string memberName, DateTime startDate, DateTime endDate, double membershipFee)
+            : base(membershipID, memberName, startDate, endDate, membershipFee) // Ensures base constructor is called
         {
             MembershipID = membershipID;
             MemberName = memberName;
@@ -23,7 +23,6 @@ namespace GymManagementApplication.Classes
             EndDate = endDate;
             MembershipFee = membershipFee;
         }
-
         protected override double CalculateMembershipFee()
         {
             // Implementation for calculating membership fee  
