@@ -37,45 +37,51 @@
 </div>  
 
 @code {  
-  private Member currentMember = new Member();  
-  private List<Member> members = new List<Member>();  
+  @code {  
+   private Member currentMember = new Member();  
+   private List<Member> members = new List<Member>();  
 
-  private readonly string connectionString = new MySqlConnectionStringBuilder  
-  {  
-      Server = "sql3.freesqldatabase.com",  
-      UserID = "sql3774599",  
-      Password = "4SbFn7kpp9",  
-      Database = "sql3774599",  
-  }.ToString();  
+   private readonly string connectionString = new MySqlConnectionStringBuilder  
+   {  
+       Server = "sql3.freesqldatabase.com",  
+       UserID = "sql3774599",  
+       Password = "4SbFn7kpp9",  
+       Database = "sql3774599",  
+   }.ToString();  
 
-  private async Task AddMemberAsync()  
-  {  
-      using var connection = new MySqlConnection(connectionString);  
-      await connection.OpenAsync();  
+   private async Task AddMemberAsync()  
+   {  
+       using (MySqlConnection connection = new MySqlConnection(connectionString))  
+       {  
+           await connection.OpenAsync();  
 
-      string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +  
-                     "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";  
+           string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +  
+                          "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";  
 
-      using var cmd = new MySqlCommand(query, connection);  
-      cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
-      cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
-      cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
-      cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
-      cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
+           using (MySqlCommand cmd = new MySqlCommand(query, connection))  
+           {  
+               cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+               cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
+               cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
+               cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
+               cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
 
-      await cmd.ExecuteNonQueryAsync();  
+               await cmd.ExecuteNonQueryAsync();  
+           }  
+       }  
 
-      members.Add(new Member  
-      {  
-          MembershipID = currentMember.MembershipID,  
-          MemberName = currentMember.MemberName,  
-          StartDate = currentMember.StartDate,  
-          EndDate = currentMember.EndDate,  
-          MembershipFee = currentMember.MembershipFee  
-      });  
+       members.Add(new Member  
+       {  
+           MembershipID = currentMember.MembershipID,  
+           MemberName = currentMember.MemberName,  
+           StartDate = currentMember.StartDate,  
+           EndDate = currentMember.EndDate,  
+           MembershipFee = currentMember.MembershipFee  
+       });  
 
-      currentMember = new Member();  
-  }  
+       currentMember = new Member();  
+   }  
+  }
 
   private async Task UpdateMemberAsync()  
   {  
