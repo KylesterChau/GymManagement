@@ -1,18 +1,8 @@
 ﻿@inherits LayoutComponentBase  
 
 <div class="page" style="background: black; color: #fff; font-family: 'Roboto', sans-serif; display: flex; flex-direction: column; height: 100vh;">  
-    <header class="app-header" style="background: #1e1e1e; padding: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 0 10px #ff0000;">  
-        <button style="background: none; border: none; color: #ff0000; font-size: 24px; cursor: pointer;">☰</button>  
-        <a href="https://learn.microsoft.com/aspnet/core/" target="_blank" style="color: #ff0000; text-decoration: none; font-weight: bold;">About</a>  
-    </header>  
 
-    <!-- Dropdown menu for navigation -->
-    <div style="position: absolute; top: 40px; left: 0; background: #1e1e1e; border: 1px solid #ff0000; border-radius: 5px; display: none;" id="dropdownMenu">
-        <a href="/home" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Home</a>
-        <a href="/manageEquipment" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Equipment Manager</a>
-        <a href="/manageMembers" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Member Manager</a>
-        <a href="/reports" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Reports</a>
-    </div>
+	<NavMenu />
 
     <article class="app-content" style="flex: 1; padding: 20px; overflow-y: auto;">  
         @Body
@@ -24,9 +14,3 @@
 
  
 </div>
-<script>
-    document.querySelector('header button').addEventListener('click', () => {
-        const dropdown = document.getElementById('dropdownMenu');
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    });
-</script>

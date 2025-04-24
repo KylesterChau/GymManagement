@@ -1,32 +1,24 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">GymManagement</a>
+﻿<!-- Dropdown menu for navigation -->
+<header class="app-header" style="background: #1e1e1e; padding: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 0 10px #ff0000;">
+    <button style="background: none; border: none; color: #ff0000; font-size: 24px; cursor: pointer;" @onclick="ToggleNavMenu">☰</button>
+    <a href="https://learn.microsoft.com/aspnet/core/" target="_blank" style="color: #ff0000; text-decoration: none; font-weight: bold;">About</a>
+</header>
+
+@if (!collapsed)
+{
+    <div style="position: absolute; top: 60px; left: 10px; background: #1e1e1e; border: 1px solid #ff0000; border-radius: 5px; z-index: 1000;">
+        <a href="/" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Home</a>
+        <a href="manageEquipment" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Equipment Manager</a>
+        <a href="manageMembers" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Member Manager</a>
+        <a href="reports" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Reports</a>
     </div>
-</div>
+}
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+@code {
+    private bool collapsed = true;
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="home" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="manageMembers">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Manage Members
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="manageEquipment">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Manage Equipment
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="reports">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Show Reports
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    private void ToggleNavMenu()
+    {
+        collapsed = !collapsed;
+    }
+}
