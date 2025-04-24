@@ -1,18 +1,17 @@
 ﻿@page "/"
 @using MySql.Data.MySqlClient
 @using MySql.Data
-@using GymManagementApplication.Classes
-<!--To Do
-- View Members
-- View Equipment
--->
-@if (loggedIn is false)
+@using GymManagement.Classes
+@inject AppState logIn
+
+<!--Screen for the user to log in with a account-->
+@if (logIn.loggedIn is false)
 {
     <div class="content-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
         <h1 style="font-size: 48px; color: #ff0000; text-shadow: 0 0 20px #ff4d4d;">Welcome to GymGo Terminal</h1>
         <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
-            <input type="text" placeholder="Username" style="margin-bottom: 10px; padding: 10px; width: 300px; border: 1px solid #ff0000; border-radius: 5px; background: #121212; color: #fff; font-size: 16px;" @bind="username" />
-            <input type="password" placeholder="Password" style="margin-bottom: 20px; padding: 10px; width: 300px; border: 1px solid #ff0000; border-radius: 5px; background: #121212; color: #fff; font-size: 16px;" @bind="password" />
+            <input type="text" placeholder="Username" style="margin-bottom: 10px; padding: 10px; width: 300px; border: 1px solid #ff0000; border-radius: 5px; background: #121212; color: #fff; font-size: 16px;" @bind="logIn.username" />
+            <input type="password" placeholder="Password" style="margin-bottom: 20px; padding: 10px; width: 300px; border: 1px solid #ff0000; border-radius: 5px; background: #121212; color: #fff; font-size: 16px;" @bind="logIn.password" />
             <button style="background: linear-gradient(135deg, #ff0000, #ff4d4d); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease-in-out; box-shadow: 0 0 10px #ff0000;" @onclick="OnLoginClicked">Login</button>
             @if (!string.IsNullOrEmpty(failureMessage))
             {
@@ -21,10 +20,12 @@
         </div>
     </div>
 }
+
 else
 {
     <button style="background: linear-gradient(135deg, #ff0000, #ff4d4d); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease-in-out; box-shadow: 0 0 10px #ff0000;" @onclick="() => viewMembers=true">View members</button>
     <button style="background: linear-gradient(135deg, #ff0000, #ff4d4d); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease-in-out; box-shadow: 0 0 10px #ff0000;" @onclick="() => viewMembers=false">View equipment</button>
+    <!--Screen to show all to member's stored in the database and their information-->
     @if (viewMembers)
     {
         <table class="table table-dark">
@@ -51,6 +52,7 @@ else
             </tbody>
         </table>
     }
+    <!--Screen to show all current equipment and their details-->
     else
     {
         <table class="table table-dark">
@@ -79,9 +81,6 @@ else
     }
 }
 @code {
-    private string username;
-    private string password;
-    private bool loggedIn = false;
     private string failureMessage;
     private bool viewMembers = true;
     private List<Member> members = new List<Member>();
@@ -93,18 +92,19 @@ else
             Password = "4SbFn7kpp9",
             Database = "sql3774599",
         };
+	// Method checks for if the username and password exist in the login table and that they are stored in the same row to access the rest of the application
     private void OnLoginClicked()
     {
         MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
         connection.Open();
         string sql = "SELECT * FROM login WHERE username = @username AND password = @password";
         MySqlCommand cmd = new MySqlCommand(sql, connection);
-        cmd.Parameters.AddWithValue("@username", username);
-        cmd.Parameters.AddWithValue("@password", password);
+        cmd.Parameters.AddWithValue("@username", logIn.username);
+        cmd.Parameters.AddWithValue("@password", logIn.password);
         MySqlDataReader reader = cmd.ExecuteReader();
         if (reader.HasRows)
         {
-            loggedIn = true;
+            logIn.loggedIn = true;
             failureMessage = string.Empty;
         }
         else
@@ -113,11 +113,13 @@ else
         }
         connection.Close();
     }
+	//Triggers upon initialization of the page
     protected override void OnInitialized()
     {
         getMembers();
 		getEquipment();
     }
+	//Method to get all the members from the database when the initialization of the page is triggered
     private void getMembers()
     {
         using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
@@ -144,6 +146,7 @@ else
             }
         }
     }
+	//Method to get all the equipment from the database when the initialization of the page is triggered
     private void getEquipment()
     {
         using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))

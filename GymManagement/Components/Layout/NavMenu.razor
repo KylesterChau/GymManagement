@@ -1,9 +1,18 @@
-﻿<!-- Dropdown menu for navigation -->
+﻿@using GymManagement.Classes
+@inject AppState logIn
+@inject NavigationManager navManager
+
+<!-- Dropdown menu for navigation -->
 <header class="app-header" style="background: #1e1e1e; padding: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 0 10px #ff0000;">
     <button style="background: none; border: none; color: #ff0000; font-size: 24px; cursor: pointer;" @onclick="ToggleNavMenu">☰</button>
     <a href="https://learn.microsoft.com/aspnet/core/" target="_blank" style="color: #ff0000; text-decoration: none; font-weight: bold;">About</a>
 </header>
-
+<!--Message appears if the user attempts to access the app's features without logging in first-->
+@if (!string.IsNullOrEmpty(failureMessage))
+{
+	<div style="color: #ff0000; text-align: left; margin-top: 10px;">@failureMessage</div>
+}
+<!---->
 @if (!collapsed)
 {
     <div style="position: absolute; top: 60px; left: 10px; background: #1e1e1e; border: 1px solid #ff0000; border-radius: 5px; z-index: 1000;">
@@ -11,14 +20,31 @@
         <a href="manageEquipment" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Equipment Manager</a>
         <a href="manageMembers" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Member Manager</a>
         <a href="reports" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Reports</a>
+		<a href="/" @onclick="logout" class="dropdown-item" style="display: block; padding: 10px; color: #ff4d4d; text-decoration: none;">Log out</a>
     </div>
 }
 
 @code {
     private bool collapsed = true;
+	private string failureMessage;
 
+	//Method that ensures the user is logged in before allowing them to access the menu
     private void ToggleNavMenu()
     {
-        collapsed = !collapsed;
+		if (logIn.loggedIn)
+		{
+			collapsed = !collapsed;
+		}
+        else
+            failureMessage = "Please log in to access the menu.";
     }
+	//Method that logs the user out of the app and back to the login screen
+	private void logout()
+	{
+		logIn.loggedIn = false;
+		logIn.username = "";
+		logIn.password = "";
+		collapsed = true;
+		navManager.NavigateTo("/", forceLoad: true);
+	}
 }

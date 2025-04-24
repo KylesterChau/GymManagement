@@ -8,6 +8,7 @@ namespace GymManagementApplication.Classes
 {
     class Equipment
     {
+        //Properties for the equipment class used for manage equipment information
         public int equipmentID { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
@@ -20,15 +21,12 @@ namespace GymManagementApplication.Classes
             Type = type;
             this.isAvailable = isAvailable;
             this.lastMaintenanceDate = lastMaintenanceDate;
-        } 
+        }
+        //Updates the equipment's availability status to being in maintenance
         public void scheduleMaintenance(DateTime date)
         {
             lastMaintenanceDate = date;
             isAvailable = false;
-        }
-        public string getEquipmentStatus() 
-        {
-            return "";
         }
     }
 }
