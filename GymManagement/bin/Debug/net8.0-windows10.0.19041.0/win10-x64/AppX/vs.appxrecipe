@@ -29,281 +29,281 @@
     <AppXManifest Include="C:\Users\Kyle\GymManagement\GymManagement\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-24T06:43:19.633</Modified>
+      <Modified>2025-04-24T19:42:11.908</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-04-24T05:24:46.162</Modified>
+      <Modified>2025-04-24T19:24:59.473</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\GymManagement.runtimeconfig.json">
       <PackagePath>GymManagement.runtimeconfig.json</PackagePath>
-      <Modified>2025-04-24T05:24:45.893</Modified>
+      <Modified>2025-04-24T19:24:59.181</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\GymManagement.dll">
       <PackagePath>GymManagement.dll</PackagePath>
-      <Modified>2025-04-24T06:43:19.365</Modified>
+      <Modified>2025-04-24T19:42:11.653</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>GymManagement.exe</PackagePath>
-      <Modified>2025-04-24T06:43:19.365</Modified>
+      <Modified>2025-04-24T19:42:11.658</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
-      <Modified>2025-04-24T04:40:42.978</Modified>
+      <Modified>2025-04-24T19:15:33.011</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
-      <Modified>2025-04-24T04:40:45.021</Modified>
+      <Modified>2025-04-24T19:15:35.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\wwwroot\css\bootstrap\bootstrap.min.css">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css</PackagePath>
-      <Modified>2025-04-24T04:40:45.021</Modified>
+      <Modified>2025-04-24T19:15:35.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\wwwroot\css\bootstrap\bootstrap.min.css.map">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
-      <Modified>2025-04-24T04:40:45.037</Modified>
+      <Modified>2025-04-24T19:15:35.301</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\wwwroot\favicon.png">
       <PackagePath>wwwroot\favicon.png</PackagePath>
-      <Modified>2025-04-24T04:40:45.037</Modified>
+      <Modified>2025-04-24T19:15:35.301</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
-      <Modified>2025-04-24T04:40:45.037</Modified>
+      <Modified>2025-04-24T19:15:35.302</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2025-04-24T04:40:45.005</Modified>
+      <Modified>2025-04-24T19:15:35.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2025-04-24T04:40:45.005</Modified>
+      <Modified>2025-04-24T19:15:35.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2025-04-24T04:40:45.005</Modified>
+      <Modified>2025-04-24T19:15:35.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-04-24T04:40:45.005</Modified>
+      <Modified>2025-04-24T19:15:35.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2025-04-24T04:40:45.005</Modified>
+      <Modified>2025-04-24T19:15:35.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2025-04-24T04:40:44.974</Modified>
+      <Modified>2025-04-24T19:15:35.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.204</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.204</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.204</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.204</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.208</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.208</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.208</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.210</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.210</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.210</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.476</Modified>
+      <Modified>2025-04-24T19:15:35.212</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2025-04-24T04:46:09.460</Modified>
+      <Modified>2025-04-24T19:15:35.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\GymManagement.deps.json">
       <PackagePath>GymManagement.deps.json</PackagePath>
-      <Modified>2025-04-24T05:24:45.746</Modified>
+      <Modified>2025-04-24T19:24:59.050</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -743,7 +743,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\staticwebassets.build.endpoints.json">
       <PackagePath>GymManagement.staticwebassets.endpoints.json</PackagePath>
-      <Modified>2025-04-24T04:46:07.287</Modified>
+      <Modified>2025-04-24T19:16:04.975</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\.nuget\packages\microsoft.maui.controls.compatibility\8.0.100\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -759,19 +759,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\GymManagement.styles.css">
       <PackagePath>wwwroot\GymManagement.styles.css</PackagePath>
-      <Modified>2025-04-24T04:40:45.005</Modified>
+      <Modified>2025-04-24T19:15:35.232</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\GymManagement.bundle.scp.css">
       <PackagePath>wwwroot\GymManagement.hftf2ebqd0.bundle.scp.css</PackagePath>
-      <Modified>2025-04-24T04:40:45.005</Modified>
+      <Modified>2025-04-24T19:15:35.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
-      <Modified>2025-04-24T04:40:42.962</Modified>
+      <Modified>2025-04-24T19:15:32.985</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
-      <Modified>2025-04-24T04:40:42.962</Modified>
+      <Modified>2025-04-24T19:15:32.987</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

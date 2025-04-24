@@ -6,29 +6,33 @@ using System.Threading.Tasks;
 
 namespace GymManagementApplication.Classes
 {
-     class Member : Membership
+    public class Member : Membership
     {
-        //Properties for the Member class to manage member information
         public int MembershipID { get; set; }
         public string MemberName { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Today;
+        public DateTime EndDate { get; set; } = DateTime.Today.AddMonths(1);
         public double MembershipFee { get; set; }
 
-        //Constructor for the Member class
-        public Member(int membershipID, string memberName, DateTime startDate, DateTime endDate, double membershipFee)
-            : base(membershipID, memberName, startDate, endDate, membershipFee)
+        public override double CalculateMembershipFee()
         {
-            MembershipID = membershipID;
-            MemberName = memberName;
-            StartDate = startDate;
-            EndDate = endDate;
-            MembershipFee = membershipFee;
-        }
-        protected override double CalculateMembershipFee()
-        {
-            // Implementation for calculating membership fee  
-            return 0.0; // Placeholder return value  
+            // Implementation for calculating membership fee
+            switch (MembershipType)
+            {
+                case 1:
+                    MembershipFee = 10.0;
+                    break;
+                case 2:
+                    MembershipFee = 20.0;
+                    break;
+                case 3:
+                    MembershipFee = 40.0;
+                    break;
+                default:
+                    MembershipFee = 0.0; // Default value for unknown membership types
+                    break;
+            }
+            return MembershipFee;
         }
     }
 }

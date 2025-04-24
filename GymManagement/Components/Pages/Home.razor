@@ -39,16 +39,16 @@ else
                 </tr>
             </thead>
             <tbody>
-					@foreach (var member in members)
-					{
-					<tr>
-						<td>@member.MembershipID</td>
-						<td>@member.MemberName</td>
-						<td>@member.StartDate.ToString("yyyy-MM-dd")</td>
-						<td>@member.EndDate.ToString("yyyy-MM-dd")</td>
-						<td>@member.MembershipFee</td>
-					</tr>
-					}
+                @foreach (var member in members)
+                {
+                    <tr>
+                        <td>@member.MembershipID</td>
+                        <td>@member.MemberName</td>
+                        <td>@member.StartDate.ToString("yyyy-MM-dd")</td>
+                        <td>@member.EndDate.ToString("yyyy-MM-dd")</td>
+                        <td>@member.MembershipFee</td>
+                    </tr>
+                }
             </tbody>
         </table>
     }
@@ -66,16 +66,16 @@ else
                 </tr>
             </thead>
             <tbody>
-				@foreach (var equipmentItem in equipment)
-				{
-					<tr>
-						<td>@equipmentItem.equipmentID</td>
-						<td>@equipmentItem.Name</td>
-						<td>@equipmentItem.Type</td>
-						<td>@(equipmentItem.isAvailable ? "Yes" : "No")</td>
-						<td>@equipmentItem.lastMaintenanceDate.ToString("yyyy-MM-dd")</td>
-					</tr>
-				}
+                @foreach (var equipmentItem in equipment)
+                {
+                    <tr>
+                        <td>@equipmentItem.equipmentID</td>
+                        <td>@equipmentItem.Name</td>
+                        <td>@equipmentItem.Type</td>
+                        <td>@(equipmentItem.isAvailable ? "Yes" : "No")</td>
+                        <td>@equipmentItem.lastMaintenanceDate.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
             </tbody>
         </table>
     }
@@ -92,7 +92,7 @@ else
             Password = "4SbFn7kpp9",
             Database = "sql3774599",
         };
-	// Method checks for if the username and password exist in the login table and that they are stored in the same row to access the rest of the application
+    // Method checks for if the username and password exist in the login table and that they are stored in the same row to access the rest of the application
     private void OnLoginClicked()
     {
         MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
@@ -113,13 +113,13 @@ else
         }
         connection.Close();
     }
-	//Triggers upon initialization of the page
-    protected override void OnInitialized()
+    //Triggers upon initialization of the page
+   protected override void OnInitialized()
     {
         getMembers();
-		getEquipment();
+        getEquipment();
     }
-	//Method to get all the members from the database when the initialization of the page is triggered
+    //Method to get all the members from the database when the initialization of the page is triggered
     private void getMembers()
     {
         using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
@@ -134,13 +134,14 @@ else
                 {
                     while (reader.Read())
                     {
-                        members.Add(new Member(
-                                reader.GetInt32(0),
-                                reader.GetString(1),
-                                reader.GetDateTime(2),
-                                reader.GetDateTime(3),
-                                reader.GetDouble(4)
-                        ));
+                        members.Add(new Member
+                            {
+                                MembershipID = reader.GetInt32(0),
+                                MemberName = reader.GetString(1),
+                                StartDate = reader.GetDateTime(2),
+                                EndDate = reader.GetDateTime(3),
+                                MembershipFee = reader.GetDouble(4)
+                            });
                     }
                 }
             }
