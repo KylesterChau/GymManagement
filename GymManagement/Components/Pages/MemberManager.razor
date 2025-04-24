@@ -67,15 +67,15 @@
        </tr>
    </thead>
    <tbody>
-       @foreach (var member in members)
-       {
-           <tr class="neon-text">
-               <td>@member.MembershipID</td>
-               <td>@member.MemberName</td>
-               <td>@member.StartDate.ToShortDateString()</td>
-               <td>@member.EndDate.ToShortDateString()</td>
-               <td>@member.MembershipFee.ToString("C")</td>
-           </tr>
+       @foreach (var member in members)  
+       {  
+          <tr class="neon-text" @onclick="() => SelectMember(member)">  
+              <td>@member.MembershipID</td>  
+              <td>@member.MemberName</td>  
+              <td>@member.StartDate.ToShortDateString()</td>  
+              <td>@member.EndDate.ToShortDateString()</td>  
+              <td>@member.MembershipFee.ToString("C")</td>  
+          </tr>  
        }
    </tbody>
 </table>
@@ -182,7 +182,7 @@
                 {
                     if (currentMember == null || string.IsNullOrWhiteSpace(currentMember.MemberName))
                     {
-                        throw new InvalidInputException("Member details cannot be null or empty.");
+                        throw new InputIsNullException("Member details cannot be null or empty.");
                     }
 
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -217,7 +217,7 @@
                     currentMember = new Member();
                     ErrorMessage = string.Empty; // Clear any previous error messages
                 }
-                catch (InvalidInputException ex)
+                catch (InputIsNullException ex)
                 {
                     ErrorMessage = $"Invalid input: {ex.Message}";
                 }
@@ -263,6 +263,19 @@
 
             currentMember = new Member();
         }
+
+    private void SelectMember(Member member)  
+    {  
+       currentMember = new Member  
+       {  
+           MembershipID = member.MembershipID,  
+           MemberName = member.MemberName,  
+           StartDate = member.StartDate,  
+           EndDate = member.EndDate,  
+           MembershipFee = member.MembershipFee  
+       };  
+       IsDisplayed = false;  
+    }
 
         /// <summary>
         /// Loads all members from the database into the local members list.
@@ -313,9 +326,25 @@
 
         private List<Member> originalMembers = new List<Member>();
 
-        private async Task DeleteMemberAsync()
-        {
-            // To Do: Implement logic to delete a member
+      
+        private async Task DeleteMemberAsync()  
+        {  
+           using (MySqlConnection connection = new MySqlConnection(connectionString))  
+           {  
+               await connection.OpenAsync();  
+               MySqlCommand command = new MySqlCommand("DELETE FROM member WHERE membershipid = @MembershipID", connection);  
+               command.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+               await command.ExecuteNonQueryAsync();  
+           }  
+
+           Member memberToRemove = members.FirstOrDefault(m => m.MembershipID == currentMember.MembershipID);  
+           if (memberToRemove != null)  
+           {  
+               members.Remove(memberToRemove);  
+           }  
+
+           currentMember = new Member();  
+        }
         }
 
 
@@ -324,4 +353,3 @@
 
 
 
-}
