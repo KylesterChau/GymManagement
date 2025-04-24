@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\Kyle\GymManagement\GymManagement\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-24T02:55:51.385</Modified>
+      <Modified>2025-04-24T03:24:39.294</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\GymManagement.dll">
       <PackagePath>GymManagement.dll</PackagePath>
-      <Modified>2025-04-24T02:55:51.108</Modified>
+      <Modified>2025-04-24T03:24:39.040</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>GymManagement.exe</PackagePath>
-      <Modified>2025-04-24T02:55:51.120</Modified>
+      <Modified>2025-04-24T03:24:39.047</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kyle\GymManagement\GymManagement\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

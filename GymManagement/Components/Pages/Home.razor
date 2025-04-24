@@ -56,17 +56,24 @@ else
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
+                    <th scope="col">Equipment id</th>
+                    <th scope="col">Equipment name</th>
+                    <th scope="col">Equipment type</th>
+                    <th scope="col">Is available</th>
+                    <th scope="col">Last maintenance</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                </tr>
+				@foreach (var equipmentItem in equipment)
+				{
+					<tr>
+						<td>@equipmentItem.equipmentID</td>
+						<td>@equipmentItem.Name</td>
+						<td>@equipmentItem.Type</td>
+						<td>@(equipmentItem.isAvailable ? "Yes" : "No")</td>
+						<td>@equipmentItem.lastMaintenanceDate.ToString("yyyy-MM-dd")</td>
+					</tr>
+				}
             </tbody>
         </table>
     }
@@ -78,6 +85,7 @@ else
     private string failureMessage;
     private bool viewMembers = true;
     private List<Member> members = new List<Member>();
+    private List<Equipment> equipment = new List<Equipment>();
     private MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
         {
             Server = "sql3.freesqldatabase.com",
@@ -108,6 +116,7 @@ else
     protected override void OnInitialized()
     {
         getMembers();
+		getEquipment();
     }
     private void getMembers()
     {
@@ -129,6 +138,32 @@ else
                                 reader.GetDateTime(2),
                                 reader.GetDateTime(3),
                                 reader.GetDouble(4)
+                        ));
+                    }
+                }
+            }
+        }
+    }
+    private void getEquipment()
+    {
+        using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
+        {
+            connection.Open();
+
+            string query = "SELECT equipmentID, Name, Type, isAvailable, lastMaintenanceDate FROM Equipment";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        equipment.Add(new Equipment(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetBoolean(3),
+                                reader.GetDateTime(4)
                         ));
                     }
                 }

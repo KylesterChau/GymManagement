@@ -8,11 +8,11 @@ namespace GymManagementApplication.Classes
 {
     class Equipment
     {
-        int equipmentID { get; set; }
-        string Name { get; set; }
-        string Type { get; set; }
-        bool isAvailable { get; set; }
-        DateTime lastMaintenanceDate { get; set; }
+        public int equipmentID { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public bool isAvailable { get; set; }
+        public DateTime lastMaintenanceDate { get; set; }
         public Equipment(int equipmentID, string name, string type, bool isAvailable, DateTime lastMaintenanceDate)
         {
             this.equipmentID = equipmentID;
