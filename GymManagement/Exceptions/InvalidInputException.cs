@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace GymManagement.Exceptions
 {
-    class InvalidInputException : Exception
+   public class InvalidInputException : Exception
     {
+        public InvalidInputException(string message) : base(message)
+        {
+        }
+
+        public static InvalidInputException FieldsCannotBeNull()
+        {
+            return new InvalidInputException("Fields cannot be null.");
+        }
     }
 }
+   

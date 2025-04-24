@@ -1,8 +1,9 @@
 ﻿@page "/manageMembers"
 
 @using MySql.Data.MySqlClient
+@using GymManagement.Exceptions;
 
-<h3 class="text-center text-primary neon-text">Member Manager</h3>
+<h3 class="text-center text-danger">Member Manager</h3>
 
 <div class="container mt-4 p-4 border rounded shadow-lg neon-bg">
     <div class="row mb-3">
@@ -44,39 +45,42 @@
         </div>
     </div>
 </div>
-
 <div class="row mt-4">
-    <div class="col-md-6 d-flex justify-content-between">
-        <button class="btn btn-success btn-lg neon-button" @onclick="AddMemberAsync">Add Member</button>
-        <button class="btn btn-primary btn-lg neon-button" @onclick="UpdateMemberAsync">Update Member</button>
-        <button class="btn btn-danger btn-lg neon-button" @onclick="DeleteMemberAsync">Delete Member</button>
-        <button class="btn btn-info btn-lg neon-button" @onclick="LoadMembers">Get Member Details</button>
-    </div>
+   <div class="col-md-6 d-flex justify-content-between">
+       <button class="btn btn-success btn-lg neon-button neon-bg neon-text" @onclick="AddMemberAsync">Add Member</button>  
+       <button class="btn btn-primary btn-lg neon-button neon-bg neon-text" @onclick="UpdateMemberAsync">Update Member</button>  
+       <button class="btn btn-danger btn-lg neon-button neon-bg neon-text" @onclick="DeleteMemberAsync">Delete Member</button>  
+       <button class="btn btn-info btn-lg neon-button neon-bg neon-text" @onclick="LoadMembers">Get Member Details</button>
+   </div>
 </div>
 
+
+}
+
 <table class="table table-striped table-hover mt-4 border shadow-lg neon-table">
-    <thead class="table-dark neon-text">
-        <tr>
-            <th>Membership ID</th>
-            <th>Member Name</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Membership Fee</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var member in members)
-        {
-            <tr class="neon-text">
-                <td>@member.MembershipID</td>
-                <td>@member.MemberName</td>
-                <td>@member.StartDate.ToShortDateString()</td>
-                <td>@member.EndDate.ToShortDateString()</td>
-                <td>@member.MembershipFee.ToString("C")</td>
-            </tr>
-        }
-    </tbody>
+   <thead class="table-dark neon-text">
+       <tr>
+           <th>Membership ID</th>
+           <th>Member Name</th>
+           <th>Start Date</th>
+           <th>End Date</th>
+           <th>Membership Fee</th>
+       </tr>
+   </thead>
+   <tbody>
+       @foreach (var member in members)
+       {
+           <tr class="neon-text">
+               <td>@member.MembershipID</td>
+               <td>@member.MemberName</td>
+               <td>@member.StartDate.ToShortDateString()</td>
+               <td>@member.EndDate.ToShortDateString()</td>
+               <td>@member.MembershipFee.ToString("C")</td>
+           </tr>
+       }
+   </tbody>
 </table>
+
 
 <style>
     .neon-text {
@@ -163,42 +167,66 @@
             Database = "sql3774599",
         }.ToString();
 
-        /// <summary>
-        /// Adds a new member to the database and updates the local members list.
-        /// </summary>
-        private async Task AddMemberAsync()
-        {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+        /// <summary>  
+        /// Adds a new member to the database and updates the local members list.  
+        /// </summary>  
+       
+            private string ErrorMessage { get; set; }
+
+            /// <summary>
+            /// Adds a new member to the database and updates the local members list.
+            /// </summary>
+            private async Task AddMemberAsync()
             {
-                await connection.OpenAsync();
-                currentMember.MembershipType = opition;
-                currentMember.MembershipFee = currentMember.CalculateMembershipFee();
-                string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +
-                               "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);
-                    cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);
-                    cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);
-                    cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);
-                    cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);
+                    if (currentMember == null || string.IsNullOrWhiteSpace(currentMember.MemberName))
+                    {
+                        throw new InvalidInputException("Member details cannot be null or empty.");
+                    }
 
-                    await cmd.ExecuteNonQueryAsync();
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        await connection.OpenAsync();
+                        currentMember.MembershipType = opition;
+                        currentMember.MembershipFee = currentMember.CalculateMembershipFee();
+                        string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +
+                                       "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";
+
+                        using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);
+                            cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);
+                            cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);
+                            cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);
+                            cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);
+
+                            await cmd.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    members.Add(new Member
+                {
+                    MembershipID = currentMember.MembershipID,
+                    MemberName = currentMember.MemberName,
+                    StartDate = currentMember.StartDate,
+                    EndDate = currentMember.EndDate,
+                    MembershipFee = currentMember.MembershipFee
+                });
+
+                    currentMember = new Member();
+                    ErrorMessage = string.Empty; // Clear any previous error messages
+                }
+                catch (InvalidInputException ex)
+                {
+                    ErrorMessage = $"Invalid input: {ex.Message}";
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage = $"An error occurred: {ex.Message}";
                 }
             }
-
-            members.Add(new Member
-            {
-                MembershipID = currentMember.MembershipID,
-                MemberName = currentMember.MemberName,
-                StartDate = currentMember.StartDate,
-                EndDate = currentMember.EndDate,
-                MembershipFee = currentMember.MembershipFee
-            });
-
-            currentMember = new Member();
-        }
+        
 
         /// <summary>
         /// Updates an existing member's details in the database and the local members list.
