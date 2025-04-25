@@ -33,7 +33,7 @@ namespace GymManagementApplication.Classes
                     MembershipFee = 0.0; // Default value for unknown membership types
                     break;
             }
-            return MembershipFee;
+            return MembershipFee * (EndDate - StartDate).TotalDays;
         }
     }
 }
