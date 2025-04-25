@@ -20,22 +20,21 @@
         </div>
     </div>
 }
-
 else
 {
-    <button style="background: linear-gradient(135deg, #ff0000, #ff4d4d); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease-in-out; box-shadow: 0 0 10px #ff0000;" @onclick="() => viewMembers=true">View members</button>
-    <button style="background: linear-gradient(135deg, #ff0000, #ff4d4d); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: all 0.3s ease-in-out; box-shadow: 0 0 10px #ff0000;" @onclick="() => viewMembers=false">View equipment</button>
+    <button class="neon-button" @onclick="() => viewMembers=true">View members</button>
+    <button class="neon-button" @onclick="() => viewMembers=false">View equipment</button>
     <!--Screen to show all to member's stored in the database and their information-->
     @if (viewMembers)
     {
-        <table class="table table-dark">
+        <table class="table neon-table">
             <thead>
                 <tr>
-                    <th scope="col">membership id</th>
-                    <th scope="col">member name</th>
-                    <th scope="col">start date</th>
-                    <th scope="col">end date</th>
-                    <th scope="col">membership fee</th>
+                    <th scope="col">Membership ID</th>
+                    <th scope="col">Member Name</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col">Membership Fee</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,14 +54,14 @@ else
     <!--Screen to show all current equipment and their details-->
     else
     {
-        <table class="table table-dark">
+        <table class="table neon-table">
             <thead>
                 <tr>
-                    <th scope="col">Equipment id</th>
-                    <th scope="col">Equipment name</th>
-                    <th scope="col">Equipment type</th>
-                    <th scope="col">Is available</th>
-                    <th scope="col">Last maintenance</th>
+                    <th scope="col">Equipment ID</th>
+                    <th scope="col">Equipment Name</th>
+                    <th scope="col">Equipment Type</th>
+                    <th scope="col">Is Available</th>
+                    <th scope="col">Last Maintenance</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,6 +79,78 @@ else
         </table>
     }
 }
+
+<style>
+    .neon-text {
+        color: #ff073a;
+        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    }
+
+    .neon-button {
+        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .neon-button:hover {
+            transform: scale(1.1);
+        }
+
+    .neon-bg {
+        background-color: #1a1a1a;
+        color: #ff073a;
+        border: 1px solid #ff073a;
+    }
+
+    .neon-input {
+        background-color: #1a1a1a;
+        color: #ff073a;
+        border: 1px solid #ff073a;
+    }
+
+        .neon-input::placeholder {
+            color: #ff073a;
+        }
+
+    .neon-table {
+        background-color: #1a1a1a;
+        color: #ff073a;
+        border: 1px solid #ff073a;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #2a2a2a;
+    }
+</style>
+
+<style>
+    .neon-text {
+        color: #ff073a;
+        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    }
+
+    .neon-button {
+        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .neon-button:hover {
+            transform: scale(1.1);
+        }
+
+    .form-label {
+        font-size: 1.1rem;
+    }
+
+    .form-control {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .table {
+        font-size: 1rem;
+    }
+</style>
+
 @code {
     private string failureMessage;
     private bool viewMembers = true;
@@ -162,13 +233,13 @@ else
                 {
                     while (reader.Read())
                     {
-                        equipment.Add(new Equipment(
-                                reader.GetInt32(0),
-                                reader.GetString(1),
-                                reader.GetString(2),
-                                reader.GetBoolean(3),
-                                reader.GetDateTime(4)
-                        ));
+                        equipment.Add(new Equipment{
+                                equipmentID = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Type = reader.GetString(2),
+                                isAvailable = reader.GetBoolean(3),
+                                lastMaintenanceDate = reader.GetDateTime(4)
+                        });
                     }
                 }
             }

@@ -1,13 +1,289 @@
 ﻿@page "/reports"
-<!--@using MySql.Data.MySqlClient
-@using MySql.Data-->
-<h3>Reports</h3>
+@using MySql.Data.MySqlClient
+@using MySql.Data
 <!--To Do
-		Customer feedfack tracker (feedback from customers with a string of text containing the feedback)
-		Equipment Maintenance schedules
-		Downtime Analysis
-		Total Revenue report (total made from customers - the total costs of the months maintenance)
+Customer feedfack tracker (feedback from customers with a string of text containing the feedback)
+Equipment maintenance history
+Total Revenue report (total made from customers - the total costs of the months maintenance)
 -->
-@code {
 
+<h2 class="neon-text">Show and Add Member Feedback</h2>  
+<h2 class="neon-text">Submit Feedback</h2>  
+<div class="mb-4">  
+  <input type="text" class="form-control neon-input mb-2" placeholder="Your Name" @bind="NewFeedbackName" />  
+  <textarea class="form-control neon-input mb-2" rows="4" placeholder="Your Feedback" @bind="NewFeedbackText"></textarea>  
+  <button class="btn neon-button text-white" @onclick="SubmitFeedback">Submit</button>  
+</div>  
+
+<table class="table neon-table table-hover">  
+  <thead>  
+      <tr>  
+          <th scope="col">Member Name</th>  
+          <th scope="col">Feedback</th>  
+      </tr>  
+  </thead>  
+  <tbody>  
+      @foreach (var member in Feedbacks)  
+      {  
+          <tr class="hoverable-row">  
+              <td>@member.MemberName</td>  
+              <td>@member.FeedBack</td>  
+          </tr>  
+      }  
+  </tbody>  
+</table>  
+
+<h2 class="neon-text">Equipment Maintenance History</h2>  
+<table class="table neon-table table-hover">  
+  <thead>  
+      <tr>  
+          <th scope="col">Equipment ID</th>  
+          <th scope="col">Equipment Name</th>  
+          <th scope="col">Maintenance Date</th>  
+      </tr>  
+  </thead>  
+  <tbody>  
+      @foreach (var equipment in EquipmentHistory)  
+      {  
+          <tr class="hoverable-row">  
+              <td>@equipment.equipmentID</td>  
+              <td>@equipment.Name</td>  
+              <td>@equipment.lastMaintenanceDate.ToString("yyyy-MM-dd")</td>  
+          </tr>  
+      }  
+  </tbody>  
+</table>  
+
+<h2 class="neon-text">Monthly Revenue</h2>  
+<table class="table neon-table table-hover">  
+  <thead>  
+      <tr>  
+          <th scope="col">Membership ID</th>  
+          <th scope="col">Member Name</th>  
+          <th scope="col">Membership Fee</th>  
+      </tr>  
+  </thead>  
+  <tbody>  
+      @foreach (var revenue in Revenue)  
+      {  
+          <tr class="hoverable-row">  
+              <td>@revenue.MembershipID</td>  
+              <td>@revenue.MemberName</td>  
+              <td>@revenue.MembershipFee</td>  
+          </tr>  
+      }  
+  </tbody>  
+</table>  
+<h3 class="neon-text">Total: @revenueTotal</h3>  
+
+<style>  
+   .neon-text {  
+       color: #ff073a;  
+       text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;  
+   }  
+
+   .neon-button {  
+       box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;  
+       transition: transform 0.2s ease-in-out;  
+   }  
+
+   .neon-button:hover {  
+       transform: scale(1.1);  
+   }  
+
+   .neon-bg {  
+       background-color: #1a1a1a;  
+       color: #ff073a;  
+       border: 1px solid #ff073a;  
+   }  
+
+   .neon-input {  
+       background-color: #1a1a1a;  
+       color: #ff073a;  
+       border: 1px solid #ff073a;  
+   }  
+
+   .neon-input::placeholder {  
+       color: #ff073a;  
+   }  
+
+   .neon-table {  
+       background-color: #1a1a1a;  
+       color: #ff073a;  
+       border: 1px solid #ff073a;  
+   }  
+
+   .table-hover tbody tr:hover {  
+       background-color: #2a2a2a;  
+       color: #ffffff;  
+   }  
+
+   .hoverable-row:hover {  
+       background-color: #2a2a2a;  
+       color: #ffffff;  
+   }  
+</style>
+
+<style>
+    .neon-text {
+        color: #ff073a;
+        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    }
+
+    .neon-button {
+        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .neon-button:hover {
+            transform: scale(1.1);
+        }
+
+    .neon-bg {
+        background-color: #1a1a1a;
+        color: #ff073a;
+        border: 1px solid #ff073a;
+    }
+
+    .neon-input {
+        background-color: #1a1a1a;
+        color: #ff073a;
+        border: 1px solid #ff073a;
+    }
+
+        .neon-input::placeholder {
+            color: #ff073a;
+        }
+
+    .neon-table {
+        background-color: #1a1a1a;
+        color: #ff073a;
+        border: 1px solid #ff073a;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #2a2a2a;
+    }
+</style>
+
+<style>
+    .neon-text {
+        color: #ff073a;
+        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    }
+
+    .neon-button {
+        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .neon-button:hover {
+            transform: scale(1.1);
+        }
+
+    .form-label {
+        font-size: 1.1rem;
+    }
+
+    .form-control {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .table {
+        font-size: 1rem;
+    }
+</style>
+
+@code {
+    private string NewFeedbackName;
+    private string NewFeedbackText;
+    private double revenueTotal;
+    List<Member> Feedbacks = new List<Member>();
+    List<Equipment> EquipmentHistory = new List<Equipment>();
+    List<Member> Revenue = new List<Member>();
+
+    private MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+        {
+            Server = "sql3.freesqldatabase.com",
+            UserID = "sql3774599",
+            Password = "4SbFn7kpp9",
+            Database = "sql3774599",
+        };
+    protected override void OnInitialized()
+    {
+        getFeedbacks();
+        getEquipmentHistory(); 
+        getMembershipRevenue();
+    }
+    private void SubmitFeedback()
+    {
+        if (!string.IsNullOrWhiteSpace(NewFeedbackName) && !string.IsNullOrWhiteSpace(NewFeedbackText))
+        {
+            MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+            connection.Open();
+            string sql = "INSERT INTO feedback (Membername, Feedback) VALUES (@name, @text)";
+            var cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@name", NewFeedbackName);
+            cmd.Parameters.AddWithValue("@text", NewFeedbackText);
+            cmd.ExecuteNonQuery();
+
+            NewFeedbackName = string.Empty;
+            NewFeedbackText = string.Empty;
+        }
+    }
+    private void getFeedbacks()
+    {
+        MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+        connection.Open();
+        string sql = "SELECT Membername, Feedback FROM feedback";
+        MySqlCommand cmd = new MySqlCommand(sql, connection);
+        MySqlDataReader reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            Feedbacks.Add(new Member
+				{
+					MemberName = reader.GetString(0),
+					FeedBack = reader.GetString(1)
+				});
+        }
+        connection.Close();
+    }
+    private void getEquipmentHistory()
+    {
+        MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+        connection.Open();
+        string sql = "SELECT equipmentID, name, lastMaintenanceDate FROM Equipment ORDER BY lastMaintenanceDate";
+        MySqlCommand cmd = new MySqlCommand(sql, connection);
+        MySqlDataReader reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            EquipmentHistory.Add(new Equipment
+				{
+                    equipmentID = reader.GetInt32(0),
+                    Name = reader.GetString(1),
+                    lastMaintenanceDate = reader.GetDateTime(2)
+				});
+        }
+    }
+    private void getMembershipRevenue()
+    {
+        MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+        connection.Open();
+        string sql = "SELECT membershipID, membername, membershipFee FROM member";
+        MySqlCommand cmd = new MySqlCommand(sql,connection);
+        MySqlDataReader reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            Member member = new Member
+                {
+                    MembershipID = reader.GetInt32(0),
+                    MemberName = reader.GetString(1),
+                    MembershipFee = reader.GetInt32(2)
+                };
+            Revenue.Add(member);
+            revenueTotal += member.MembershipFee;
+        }
+        connection.Close();
+    }
 }

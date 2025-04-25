@@ -13,6 +13,7 @@ namespace GymManagementApplication.Classes
         public DateTime StartDate { get; set; } = DateTime.Today;
         public DateTime EndDate { get; set; } = DateTime.Today.AddMonths(1);
         public double MembershipFee { get; set; }
+        public string FeedBack { get; set; }
 
         public override double CalculateMembershipFee()
         {

@@ -8,13 +8,8 @@ namespace GymManagement.Exceptions
 {
    public class InputIsNullException : Exception
     {
-        public InputIsNullException(string message) : base(message)
+        public InputIsNullException() : base("Fields cannot be null.")
         {
-        }
-
-        public static InputIsNullException FieldsCannotBeNull()
-        {
-            return new InputIsNullException("Fields cannot be null.");
         }
     }
 }
