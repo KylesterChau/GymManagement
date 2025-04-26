@@ -156,120 +156,142 @@
 </style>
 
 
-@code {
-        private Member currentMember = new Member();
-        private List<Member> members = new List<Member>();
-        private bool IsDisplayed = false;
-        private int opition;
+@code {  
 
-        private readonly string connectionString = new MySqlConnectionStringBuilder
-        {
-            Server = "sql3.freesqldatabase.com",
-            UserID = "sql3774599",
-            Password = "4SbFn7kpp9",
-            Database = "sql3774599",
-        }.ToString();
+   /// <summary>  
+   /// Represents the currently selected or being edited member.  
+   /// </summary>  
+   private Member currentMember = new Member();  
 
-        /// <summary>  
-        /// Adds a new member to the database and updates the local members list.  
-        /// </summary>  
-       
-            private string ErrorMessage { get; set; }
+   /// <summary>  
+   /// Stores the list of all members loaded from the database.  
+   /// </summary>  
+   private List<Member> members = new List<Member>();  
 
-            /// <summary>
-            /// Adds a new member to the database and updates the local members list.
-            /// </summary>
-            private async Task AddMemberAsync()
-            {
-                try
-                {
-                    if (currentMember == null || string.IsNullOrWhiteSpace(currentMember.MemberName))
-                    {
-                throw new InputIsNullException();
+   /// <summary>  
+   /// Indicates whether certain UI elements are displayed.  
+   /// </summary>  
+   private bool IsDisplayed = false;  
 
-                    }
+   /// <summary>  
+   /// Stores the selected membership type option.  
+   /// </summary>  
+   private int opition;  
 
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        await connection.OpenAsync();
-                        currentMember.MembershipType = opition;
-                        currentMember.MembershipFee = currentMember.CalculateMembershipFee();
-                        string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +
-                                       "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";
+   /// <summary>  
+   /// Connection string used to connect to the MySQL database.  
+   /// </summary>  
+   private readonly string connectionString = new MySqlConnectionStringBuilder  
+   {  
+       Server = "sql3.freesqldatabase.com",  
+       UserID = "sql3774599",  
+       Password = "4SbFn7kpp9",  
+       Database = "sql3774599",  
+   }.ToString();  
 
-                        using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                        {
-                            cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);
-                            cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);
-                            cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);
-                            cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);
-                            cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);
+   /// <summary>  
+   /// Stores error messages to display in the UI.  
+   /// </summary>  
+   private string ErrorMessage { get; set; }  
 
-                            await cmd.ExecuteNonQueryAsync();
-                        }
-                    }
+   /// <summary>  
+   /// Adds a new member to the database and updates the local members list.  
+   /// Validates input and calculates the membership fee before saving.  
+   /// </summary>  
+   private async Task AddMemberAsync()  
+   {  
+       try  
+       {  
+           if (currentMember == null || string.IsNullOrWhiteSpace(currentMember.MemberName))  
+           {  
+               throw new InputIsNullException();  
+           }  
 
-                    members.Add(new Member
-                {
-                    MembershipID = currentMember.MembershipID,
-                    MemberName = currentMember.MemberName,
-                    StartDate = currentMember.StartDate,
-                    EndDate = currentMember.EndDate,
-                    MembershipFee = currentMember.MembershipFee
-                });
+           using (MySqlConnection connection = new MySqlConnection(connectionString))  
+           {  
+               await connection.OpenAsync();  
+               currentMember.MembershipType = opition;  
+               currentMember.MembershipFee = currentMember.CalculateMembershipFee();  
+               string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +  
+                              "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";  
 
-                    currentMember = new Member();
-                    ErrorMessage = string.Empty; // Clear any previous error messages
-                }
-                catch (InputIsNullException ex)
-                {
-                    ErrorMessage = $"Invalid input: {ex.Message}";
-                }
-                catch (Exception ex)
-                {
-                    ErrorMessage = $"An error occurred: {ex.Message}";
-                }
-            }
-        
+               using (MySqlCommand cmd = new MySqlCommand(query, connection))  
+               {  
+                   cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+                   cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
+                   cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
+                   cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
+                   cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
 
-        /// <summary>
-        /// Updates an existing member's details in the database and the local members list.
-        /// </summary>
-        private async Task UpdateMemberAsync()
-        {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                await connection.OpenAsync();
+                   await cmd.ExecuteNonQueryAsync();  
+               }  
+           }  
 
-                string query = "UPDATE member SET membername = @MemberName, start = @StartDate, end = @EndDate, membershipfee = @MembershipFee " +
-                               "WHERE membershipid = @MembershipID";
+           members.Add(new Member  
+           {  
+               MembershipID = currentMember.MembershipID,  
+               MemberName = currentMember.MemberName,  
+               StartDate = currentMember.StartDate,  
+               EndDate = currentMember.EndDate,  
+               MembershipFee = currentMember.MembershipFee  
+           });  
 
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);
-                    cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);
-                    cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);
-                    cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);
-                    cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);
+           currentMember = new Member();  
+           ErrorMessage = string.Empty; // Clear any previous error messages  
+       }  
+       catch (InputIsNullException ex)  
+       {  
+           ErrorMessage = $"Invalid input: {ex.Message}";  
+       }  
+       catch (Exception ex)  
+       {  
+           ErrorMessage = $"An error occurred: {ex.Message}";  
+       }  
+   }  
 
-                    await cmd.ExecuteNonQueryAsync();
-                }
-            }
+   /// <summary>  
+   /// Updates an existing member's details in the database and the local members list.  
+   /// Ensures the database and UI remain in sync.  
+   /// </summary>  
+   private async Task UpdateMemberAsync()  
+   {  
+       using (MySqlConnection connection = new MySqlConnection(connectionString))  
+       {  
+           await connection.OpenAsync();  
 
-            Member memberToUpdate = members.FirstOrDefault(m => m.MembershipID == currentMember.MembershipID);
-            if (memberToUpdate != null)
-            {
-                memberToUpdate.MemberName = currentMember.MemberName;
-                memberToUpdate.StartDate = currentMember.StartDate;
-                memberToUpdate.EndDate = currentMember.EndDate;
-                memberToUpdate.MembershipFee = currentMember.MembershipFee;
-            }
+           string query = "UPDATE member SET membername = @MemberName, start = @StartDate, end = @EndDate, membershipfee = @MembershipFee " +  
+                          "WHERE membershipid = @MembershipID";  
 
-            currentMember = new Member();
-        }
+           using (MySqlCommand cmd = new MySqlCommand(query, connection))  
+           {  
+               cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+               cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
+               cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
+               cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
+               cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
 
-    private void SelectMember(Member member)  
-    {  
+               await cmd.ExecuteNonQueryAsync();  
+           }  
+       }  
+
+       Member memberToUpdate = members.FirstOrDefault(m => m.MembershipID == currentMember.MembershipID);  
+       if (memberToUpdate != null)  
+       {  
+           memberToUpdate.MemberName = currentMember.MemberName;  
+           memberToUpdate.StartDate = currentMember.StartDate;  
+           memberToUpdate.EndDate = currentMember.EndDate;  
+           memberToUpdate.MembershipFee = currentMember.MembershipFee;  
+       }  
+
+       currentMember = new Member();  
+   }  
+
+   /// <summary>  
+   /// Selects a member from the list and populates the form fields for editing.  
+   /// </summary>  
+   /// <param name="member">The member to select.</param>  
+   private void SelectMember(Member member)  
+   {  
        currentMember = new Member  
        {  
            MembershipID = member.MembershipID,  
@@ -279,77 +301,83 @@
            MembershipFee = member.MembershipFee  
        };  
        IsDisplayed = false;  
-    }
+   }  
 
-        /// <summary>
-        /// Loads all members from the database into the local members list.
-        /// </summary>
-        private void LoadMembers()
-        {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
+   /// <summary>  
+   /// Loads all members from the database into the local members list.  
+   /// This method is called during initialization to populate the UI.  
+   /// </summary>  
+   private void LoadMembers()  
+   {  
+       using (MySqlConnection connection = new MySqlConnection(connectionString))  
+       {  
+           connection.Open();  
 
-                string query = "SELECT membershipid, membername, start, end, membershipfee FROM member";
+           string query = "SELECT membershipid, membername, start, end, membershipfee FROM member";  
 
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            members.Add(new Member
-                            {
-                                MembershipID = reader.GetInt32(0),
-                                MemberName = reader.GetString(1),
-                                StartDate = reader.GetDateTime(2),
-                                EndDate = reader.GetDateTime(3),
-                                MembershipFee = reader.GetDouble(4)
-                            });
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Initializes the component by loading members and creating a backup of the original members list.
-        /// </summary>
-        protected override void OnInitialized()
-        {
-            LoadMembers();
-            originalMembers = members.Select(m => new Member
-            {
-                MembershipID = m.MembershipID,
-                MemberName = m.MemberName,
-                StartDate = m.StartDate,
-                EndDate = m.EndDate,
-                MembershipFee = m.MembershipFee
-            }).ToList();
-        }
-
-        private List<Member> originalMembers = new List<Member>();
-
-      
-        private async Task DeleteMemberAsync()  
-        {  
-           using (MySqlConnection connection = new MySqlConnection(connectionString))  
+           using (MySqlCommand command = new MySqlCommand(query, connection))  
            {  
-               await connection.OpenAsync();  
-               MySqlCommand command = new MySqlCommand("DELETE FROM member WHERE membershipid = @MembershipID", connection);  
-               command.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
-               await command.ExecuteNonQueryAsync();  
+               using (MySqlDataReader reader = command.ExecuteReader())  
+               {  
+                   while (reader.Read())  
+                   {  
+                       members.Add(new Member  
+                       {  
+                           MembershipID = reader.GetInt32(0),  
+                           MemberName = reader.GetString(1),  
+                           StartDate = reader.GetDateTime(2),  
+                           EndDate = reader.GetDateTime(3),  
+                           MembershipFee = reader.GetDouble(4)  
+                       });  
+                   }  
+               }  
            }  
+       }  
+   }  
 
-           Member memberToRemove = members.FirstOrDefault(m => m.MembershipID == currentMember.MembershipID);  
-           if (memberToRemove != null)  
-           {  
-               members.Remove(memberToRemove);  
-           }  
+   /// <summary>  
+   /// Initializes the component by loading members and creating a backup of the original members list.  
+   /// </summary>  
+   protected override void OnInitialized()  
+   {  
+       LoadMembers();  
+       originalMembers = members.Select(m => new Member  
+       {  
+           MembershipID = m.MembershipID,  
+           MemberName = m.MemberName,  
+           StartDate = m.StartDate,  
+           EndDate = m.EndDate,  
+           MembershipFee = m.MembershipFee  
+       }).ToList();  
+   }  
 
-           currentMember = new Member();  
-        }
-        }
+   /// <summary>  
+   /// Stores a backup of the original members list for potential restoration.  
+   /// </summary>  
+   private List<Member> originalMembers = new List<Member>();  
+
+   /// <summary>  
+   /// Deletes a member from the database and removes them from the local members list.  
+   /// </summary>  
+   private async Task DeleteMemberAsync()  
+   {  
+       using (MySqlConnection connection = new MySqlConnection(connectionString))  
+       {  
+           await connection.OpenAsync();  
+           MySqlCommand command = new MySqlCommand("DELETE FROM member WHERE membershipid = @MembershipID", connection);  
+           command.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+           await command.ExecuteNonQueryAsync();  
+       }  
+
+       Member memberToRemove = members.FirstOrDefault(m => m.MembershipID == currentMember.MembershipID);  
+       if (memberToRemove != null)  
+       {  
+           members.Remove(memberToRemove);  
+       }  
+
+       currentMember = new Member();  
+   }  
+}
 
 
 

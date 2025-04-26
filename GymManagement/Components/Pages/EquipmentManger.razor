@@ -121,181 +121,217 @@
     </tbody>
 </table>
 
-@code {
-    private Equipment currentEquipment = new Equipment();
-    private List<Equipment> equipmentList = new List<Equipment>();
-    private string ErrorMessage;
+@code {  
+   /// <summary>  
+   /// Represents the currently selected or being edited equipment.  
+   /// </summary>  
+   private Equipment currentEquipment = new Equipment();  
 
-    private readonly string connectionString = new MySqlConnectionStringBuilder
-        {
-            Server = "sql3.freesqldatabase.com",
-            UserID = "sql3774599",
-            Password = "4SbFn7kpp9",
-            Database = "sql3774599",
-        }.ToString();
+   /// <summary>  
+   /// List of all equipment loaded from the database.  
+   /// </summary>  
+   private List<Equipment> equipmentList = new List<Equipment>();  
 
-    protected override void OnInitialized()
-    {
-        LoadEquipment();
-    }
+   /// <summary>  
+   /// Stores error messages to display to the user in case of exceptions.  
+   /// </summary>  
+   private string ErrorMessage;  
 
-    private void AddEquipment()
-    {
-        try
-        {
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "INSERT INTO Equipment (equipmentID, Name, Type, isAvailable, lastMaintenanceDate) VALUES (@ID, @Name, @Type, @Available, @LastMaintenance)";
-                using (var command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);
-                    command.Parameters.AddWithValue("@Name", currentEquipment.Name);
-                    command.Parameters.AddWithValue("@Type", currentEquipment.Type);
-                    command.Parameters.AddWithValue("@Available", currentEquipment.isAvailable);
-                    command.Parameters.AddWithValue("@LastMaintenance", currentEquipment.lastMaintenanceDate);
-                    command.ExecuteNonQuery();
-                }
-            }
+   /// <summary>  
+   /// Connection string for the MySQL database.  
+   /// </summary>  
+   private readonly string connectionString = new MySqlConnectionStringBuilder  
+       {  
+           Server = "sql3.freesqldatabase.com",  
+           UserID = "sql3774599",  
+           Password = "4SbFn7kpp9",  
+           Database = "sql3774599",  
+       }.ToString();  
 
-            equipmentList.Add(new Equipment
-                {
-                    equipmentID = currentEquipment.equipmentID,
-                    Name = currentEquipment.Name,
-                    Type = currentEquipment.Type,
-                    isAvailable = currentEquipment.isAvailable,
-                    lastMaintenanceDate = currentEquipment.lastMaintenanceDate
-                });
+   /// <summary>  
+   /// Called when the component is initialized. Loads the equipment data from the database.  
+   /// </summary>  
+   protected override void OnInitialized()  
+   {  
+       LoadEquipment();  
+   }  
 
-            currentEquipment = new Equipment();
-            ErrorMessage = string.Empty;
-        }
-        catch (Exception ex)
-        {
-            ErrorMessage = $"Error: {ex.Message}";
-        }
-    }
+   /// <summary>  
+   /// Adds a new equipment record to the database and updates the local list.  
+   /// </summary>  
+   private void AddEquipment()  
+   {  
+       try  
+       {  
+           using (var connection = new MySqlConnection(connectionString))  
+           {  
+               connection.Open();  
+               string query = "INSERT INTO Equipment (equipmentID, Name, Type, isAvailable, lastMaintenanceDate) VALUES (@ID, @Name, @Type, @Available, @LastMaintenance)";  
+               using (var command = new MySqlCommand(query, connection))  
+               {  
+                   command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);  
+                   command.Parameters.AddWithValue("@Name", currentEquipment.Name);  
+                   command.Parameters.AddWithValue("@Type", currentEquipment.Type);  
+                   command.Parameters.AddWithValue("@Available", currentEquipment.isAvailable);  
+                   command.Parameters.AddWithValue("@LastMaintenance", currentEquipment.lastMaintenanceDate);  
+                   command.ExecuteNonQuery();  
+               }  
+           }  
 
-    private void UpdateEquipment()
-    {
-        try
-        {
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "UPDATE Equipment SET Name = @Name, Type = @Type, isAvailable = @Available, lastMaintenanceDate = @LastMaintenance WHERE equipmentID = @ID";
-                using (var command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);
-                    command.Parameters.AddWithValue("@Name", currentEquipment.Name);
-                    command.Parameters.AddWithValue("@Type", currentEquipment.Type);
-                    command.Parameters.AddWithValue("@Available", currentEquipment.isAvailable);
-                    command.Parameters.AddWithValue("@LastMaintenance", currentEquipment.lastMaintenanceDate);
-                    command.ExecuteNonQuery();
-                }
-            }
+           equipmentList.Add(new Equipment  
+               {  
+                   equipmentID = currentEquipment.equipmentID,  
+                   Name = currentEquipment.Name,  
+                   Type = currentEquipment.Type,  
+                   isAvailable = currentEquipment.isAvailable,  
+                   lastMaintenanceDate = currentEquipment.lastMaintenanceDate  
+               });  
 
-            var existing = equipmentList.FirstOrDefault(e => e.equipmentID == currentEquipment.equipmentID);
-            if (existing != null)
-            {
-                existing.Name = currentEquipment.Name;
-                existing.Type = currentEquipment.Type;
-                existing.isAvailable = currentEquipment.isAvailable;
-                existing.lastMaintenanceDate = currentEquipment.lastMaintenanceDate;
-            }
+           currentEquipment = new Equipment();  
+           ErrorMessage = string.Empty;  
+       }  
+       catch (Exception ex)  
+       {  
+           ErrorMessage = $"Error: {ex.Message}";  
+       }  
+   }  
 
-            currentEquipment = new Equipment();
-            ErrorMessage = string.Empty;
-        }
-        catch (Exception ex)
-        {
-            ErrorMessage = $"Error: {ex.Message}";
-        }
-    }
+   /// <summary>  
+   /// Updates an existing equipment record in the database and updates the local list.  
+   /// </summary>  
+   private void UpdateEquipment()  
+   {  
+       try  
+       {  
+           using (var connection = new MySqlConnection(connectionString))  
+           {  
+               connection.Open();  
+               string query = "UPDATE Equipment SET Name = @Name, Type = @Type, isAvailable = @Available, lastMaintenanceDate = @LastMaintenance WHERE equipmentID = @ID";  
+               using (var command = new MySqlCommand(query, connection))  
+               {  
+                   command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);  
+                   command.Parameters.AddWithValue("@Name", currentEquipment.Name);  
+                   command.Parameters.AddWithValue("@Type", currentEquipment.Type);  
+                   command.Parameters.AddWithValue("@Available", currentEquipment.isAvailable);  
+                   command.Parameters.AddWithValue("@LastMaintenance", currentEquipment.lastMaintenanceDate);  
+                   command.ExecuteNonQuery();  
+               }  
+           }  
 
-    private void DeleteEquipment()
-    {
-        try
-        {
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "DELETE FROM Equipment WHERE equipmentID = @ID";
-                using (var command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);
-                    command.ExecuteNonQuery();
-                }
-            }
+           var existing = equipmentList.FirstOrDefault(e => e.equipmentID == currentEquipment.equipmentID);  
+           if (existing != null)  
+           {  
+               existing.Name = currentEquipment.Name;  
+               existing.Type = currentEquipment.Type;  
+               existing.isAvailable = currentEquipment.isAvailable;  
+               existing.lastMaintenanceDate = currentEquipment.lastMaintenanceDate;  
+           }  
 
-            var existing = equipmentList.FirstOrDefault(e => e.equipmentID == currentEquipment.equipmentID);
-            if (existing != null)
-                equipmentList.Remove(existing);
+           currentEquipment = new Equipment();  
+           ErrorMessage = string.Empty;  
+       }  
+       catch (Exception ex)  
+       {  
+           ErrorMessage = $"Error: {ex.Message}";  
+       }  
+   }  
 
-            currentEquipment = new Equipment();
-            ErrorMessage = string.Empty;
-        }
-        catch (Exception ex)
-        {
-            ErrorMessage = $"Error: {ex.Message}";
-        }
-    }
+   /// <summary>  
+   /// Deletes an equipment record from the database and removes it from the local list.  
+   /// </summary>  
+   private void DeleteEquipment()  
+   {  
+       try  
+       {  
+           using (var connection = new MySqlConnection(connectionString))  
+           {  
+               connection.Open();  
+               string query = "DELETE FROM Equipment WHERE equipmentID = @ID";  
+               using (var command = new MySqlCommand(query, connection))  
+               {  
+                   command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);  
+                   command.ExecuteNonQuery();  
+               }  
+           }  
 
-    private void LoadEquipment()
-    {
-        try
-        {
-            equipmentList.Clear();
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "SELECT equipmentID, Name, Type, isAvailable, lastMaintenanceDate FROM Equipment";
-                using (var command = new MySqlCommand(query, connection))
-                {
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            equipmentList.Add(new Equipment
-                                {
-                                    equipmentID = reader.GetInt32(0),
-                                    Name = reader.GetString(1),
-                                    Type = reader.GetString(2),
-                                    isAvailable = reader.GetBoolean(3),
-                                    lastMaintenanceDate = reader.GetDateTime(4)
-                                });
-                        }
-                    }
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            ErrorMessage = $"Error: {ex.Message}";
-        }
-    }
+           var existing = equipmentList.FirstOrDefault(e => e.equipmentID == currentEquipment.equipmentID);  
+           if (existing != null)  
+               equipmentList.Remove(existing);  
 
-    private void SelectEquipment(Equipment equipment)
-    {
-        currentEquipment = new Equipment
-            {
-                equipmentID = equipment.equipmentID,
-                Name = equipment.Name,
-                Type = equipment.Type,
-                isAvailable = equipment.isAvailable,
-                lastMaintenanceDate = equipment.lastMaintenanceDate
-            };
-    }
-    private string lastMaintenanceText
-    {
-        get => currentEquipment.lastMaintenanceDate.ToString("yyyy-MM-dd");
-        set
-        {
-            if (DateTime.TryParse(value, out DateTime parsedDate))
-                currentEquipment.lastMaintenanceDate = parsedDate;
-            else
-                ErrorMessage = "Invalid date format. Use yyyy-MM-dd.";
-        }
-    }
+           currentEquipment = new Equipment();  
+           ErrorMessage = string.Empty;  
+       }  
+       catch (Exception ex)  
+       {  
+           ErrorMessage = $"Error: {ex.Message}";  
+       }  
+   }  
 
+   /// <summary>  
+   /// Loads all equipment records from the database into the local list.  
+   /// </summary>  
+   private void LoadEquipment()  
+   {  
+       try  
+       {  
+           equipmentList.Clear();  
+           using (var connection = new MySqlConnection(connectionString))  
+           {  
+               connection.Open();  
+               string query = "SELECT equipmentID, Name, Type, isAvailable, lastMaintenanceDate FROM Equipment";  
+               using (var command = new MySqlCommand(query, connection))  
+               {  
+                   using (var reader = command.ExecuteReader())  
+                   {  
+                       while (reader.Read())  
+                       {  
+                           equipmentList.Add(new Equipment  
+                               {  
+                                   equipmentID = reader.GetInt32(0),  
+                                   Name = reader.GetString(1),  
+                                   Type = reader.GetString(2),  
+                                   isAvailable = reader.GetBoolean(3),  
+                                   lastMaintenanceDate = reader.GetDateTime(4)  
+                               });  
+                       }  
+                   }  
+               }  
+           }  
+       }  
+       catch (Exception ex)  
+       {  
+           ErrorMessage = $"Error: {ex.Message}";  
+       }  
+   }  
+
+   /// <summary>  
+   /// Selects an equipment item from the list and sets it as the current equipment for editing.  
+   /// </summary>  
+   /// <param name="equipment">The equipment to select.</param>  
+   private void SelectEquipment(Equipment equipment)  
+   {  
+       currentEquipment = new Equipment  
+           {  
+               equipmentID = equipment.equipmentID,  
+               Name = equipment.Name,  
+               Type = equipment.Type,  
+               isAvailable = equipment.isAvailable,  
+               lastMaintenanceDate = equipment.lastMaintenanceDate  
+           };  
+   }  
+
+   /// <summary>  
+   /// Gets or sets the last maintenance date as a string. Validates the input format.  
+   /// </summary>  
+   private string lastMaintenanceText  
+   {  
+       get => currentEquipment.lastMaintenanceDate.ToString("yyyy-MM-dd");  
+       set  
+       {  
+           if (DateTime.TryParse(value, out DateTime parsedDate))  
+               currentEquipment.lastMaintenanceDate = parsedDate;  
+           else  
+               ErrorMessage = "Invalid date format. Use yyyy-MM-dd.";  
+       }  
+   }  
 }
