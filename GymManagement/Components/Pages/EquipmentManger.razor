@@ -1,13 +1,301 @@
 ﻿@page "/manageEquipment"
-<!--@using MySql.Data.MySqlClient
-@using MySql.Data-->
-<h1>Weather</h1>
+@using MySql.Data.MySqlClient
+@using GymManagement.Classes
 
-<!--To Do
-	Add/Remove equipment from the database
-	Mark equipment as in maintenance
-	Update equipment details
--->
-@code {
+<h1 class="text-center neon-text">Equipment Manager</h1>
+
+<div class="container mt-4 p-4 border rounded shadow-lg neon-bg">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label fw-bold neon-text">Equipment ID:</label>
+            <input type="number" class="form-control neon-input" @bind="currentEquipment.equipmentID" placeholder="Enter Equipment ID" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label fw-bold neon-text">Equipment Name:</label>
+            <input type="text" class="form-control neon-input" @bind="currentEquipment.Name" placeholder="Enter Equipment Name" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label fw-bold neon-text">Equipment Type:</label>
+            <input type="text" class="form-control neon-input" @bind="currentEquipment.Type" placeholder="ex. Cardio, Weight Training, Endurnace" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label fw-bold neon-text">Available:</label>
+            <select class="form-select neon-input" @bind="currentEquipment.isAvailable">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label fw-bold neon-text">Last Maintenance Date:</label>
+            <input type="text" class="form-control neon-input" @bind="lastMaintenanceText" placeholder="yyyy-MM-dd" />
+
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 d-flex justify-content-between">
+            <button class="btn btn-success btn-lg neon-button neon-bg neon-text" @onclick="AddEquipment">Add Equipment</button>
+            <button class="btn btn-primary btn-lg neon-button neon-bg neon-text" @onclick="UpdateEquipment">Update Equipment</button>
+            <button class="btn btn-danger btn-lg neon-button neon-bg neon-text" @onclick="DeleteEquipment">Delete Equipment</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .neon-text {
+        color: #ff073a;
+        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    }
+
+    .neon-button {
+        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .neon-bg {
+        background-color: #1a1a1a;
+        color: #ff073a;
+        border: 1px solid #ff073a;
+    }
+
+    .neon-input {
+        background-color: #1a1a1a !important;
+        color: #ff073a !important;
+        border: 1px solid #ff073a !important;
+    }
+
+        .neon-input::placeholder {
+            color: #ff073a;
+            opacity: 0.7;
+        }
+
+    .neon-table {
+        background-color: #1a1a1a;
+        color: #ff073a;
+        border: 1px solid #ff073a;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #2a2a2a;
+    }
+</style>
+
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <h4 class="mt-4 text-center neon-text">@ErrorMessage</h4>
 }
 
+<table class="table table-striped table-hover mt-4 border shadow-lg neon-table">
+    <thead class="table-dark neon-text">
+        <tr>
+            <th>Equipment ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Available</th>
+            <th>Last Maintenance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in equipmentList)
+        {
+            <tr class="neon-text" @onclick="() => SelectEquipment(item)">
+                <td>@item.equipmentID</td>
+                <td>@item.Name</td>
+                <td>@item.Type</td>
+                <td>@(item.isAvailable ? "Yes" : "No")</td>
+                <td>@item.lastMaintenanceDate.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private Equipment currentEquipment = new Equipment();
+    private List<Equipment> equipmentList = new List<Equipment>();
+    private string ErrorMessage;
+
+    private readonly string connectionString = new MySqlConnectionStringBuilder
+        {
+            Server = "sql3.freesqldatabase.com",
+            UserID = "sql3774599",
+            Password = "4SbFn7kpp9",
+            Database = "sql3774599",
+        }.ToString();
+
+    protected override void OnInitialized()
+    {
+        LoadEquipment();
+    }
+
+    private void AddEquipment()
+    {
+        try
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "INSERT INTO Equipment (equipmentID, Name, Type, isAvailable, lastMaintenanceDate) VALUES (@ID, @Name, @Type, @Available, @LastMaintenance)";
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);
+                    command.Parameters.AddWithValue("@Name", currentEquipment.Name);
+                    command.Parameters.AddWithValue("@Type", currentEquipment.Type);
+                    command.Parameters.AddWithValue("@Available", currentEquipment.isAvailable);
+                    command.Parameters.AddWithValue("@LastMaintenance", currentEquipment.lastMaintenanceDate);
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            equipmentList.Add(new Equipment
+                {
+                    equipmentID = currentEquipment.equipmentID,
+                    Name = currentEquipment.Name,
+                    Type = currentEquipment.Type,
+                    isAvailable = currentEquipment.isAvailable,
+                    lastMaintenanceDate = currentEquipment.lastMaintenanceDate
+                });
+
+            currentEquipment = new Equipment();
+            ErrorMessage = string.Empty;
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error: {ex.Message}";
+        }
+    }
+
+    private void UpdateEquipment()
+    {
+        try
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE Equipment SET Name = @Name, Type = @Type, isAvailable = @Available, lastMaintenanceDate = @LastMaintenance WHERE equipmentID = @ID";
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);
+                    command.Parameters.AddWithValue("@Name", currentEquipment.Name);
+                    command.Parameters.AddWithValue("@Type", currentEquipment.Type);
+                    command.Parameters.AddWithValue("@Available", currentEquipment.isAvailable);
+                    command.Parameters.AddWithValue("@LastMaintenance", currentEquipment.lastMaintenanceDate);
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            var existing = equipmentList.FirstOrDefault(e => e.equipmentID == currentEquipment.equipmentID);
+            if (existing != null)
+            {
+                existing.Name = currentEquipment.Name;
+                existing.Type = currentEquipment.Type;
+                existing.isAvailable = currentEquipment.isAvailable;
+                existing.lastMaintenanceDate = currentEquipment.lastMaintenanceDate;
+            }
+
+            currentEquipment = new Equipment();
+            ErrorMessage = string.Empty;
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error: {ex.Message}";
+        }
+    }
+
+    private void DeleteEquipment()
+    {
+        try
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM Equipment WHERE equipmentID = @ID";
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            var existing = equipmentList.FirstOrDefault(e => e.equipmentID == currentEquipment.equipmentID);
+            if (existing != null)
+                equipmentList.Remove(existing);
+
+            currentEquipment = new Equipment();
+            ErrorMessage = string.Empty;
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error: {ex.Message}";
+        }
+    }
+
+    private void LoadEquipment()
+    {
+        try
+        {
+            equipmentList.Clear();
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT equipmentID, Name, Type, isAvailable, lastMaintenanceDate FROM Equipment";
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            equipmentList.Add(new Equipment
+                                {
+                                    equipmentID = reader.GetInt32(0),
+                                    Name = reader.GetString(1),
+                                    Type = reader.GetString(2),
+                                    isAvailable = reader.GetBoolean(3),
+                                    lastMaintenanceDate = reader.GetDateTime(4)
+                                });
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error: {ex.Message}";
+        }
+    }
+
+    private void SelectEquipment(Equipment equipment)
+    {
+        currentEquipment = new Equipment
+            {
+                equipmentID = equipment.equipmentID,
+                Name = equipment.Name,
+                Type = equipment.Type,
+                isAvailable = equipment.isAvailable,
+                lastMaintenanceDate = equipment.lastMaintenanceDate
+            };
+    }
+    private string lastMaintenanceText
+    {
+        get => currentEquipment.lastMaintenanceDate.ToString("yyyy-MM-dd");
+        set
+        {
+            if (DateTime.TryParse(value, out DateTime parsedDate))
+                currentEquipment.lastMaintenanceDate = parsedDate;
+            else
+                ErrorMessage = "Invalid date format. Use yyyy-MM-dd.";
+        }
+    }
+
+}

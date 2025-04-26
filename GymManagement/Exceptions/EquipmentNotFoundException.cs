@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GymManagement.Exceptions
 {
-    class EquipmentNotFoundException : Exception
+    public class EquipmentNotFoundException : Exception
     {
+        public EquipmentNotFoundException() : base("Equipment not found.") { }
+
+        public EquipmentNotFoundException(string message) : base(message) { }
+
+        public EquipmentNotFoundException(string message, Exception innerException) : base(message, innerException) { }
     }
 }
