@@ -280,7 +280,7 @@
            memberToUpdate.MemberName = currentMember.MemberName;  
            memberToUpdate.StartDate = currentMember.StartDate;  
            memberToUpdate.EndDate = currentMember.EndDate;  
-           memberToUpdate.MembershipFee = currentMember.MembershipFee;  
+           memberToUpdate.MembershipFee = currentMember.UpdateMembershipData(currentMember.MembershipType, currentMember.StartDate, currentMember.EndDate);
        }  
 
        currentMember = new Member();  

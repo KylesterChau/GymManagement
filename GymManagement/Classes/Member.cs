@@ -17,7 +17,7 @@ namespace GymManagementApplication.Classes
 
         public override double CalculateMembershipFee()
         {
-            // Implementation for calculating membership fee
+            // Implementation for calculating membership fee  
             switch (MembershipType)
             {
                 case 1:
@@ -30,10 +30,20 @@ namespace GymManagementApplication.Classes
                     MembershipFee = 40.0;
                     break;
                 default:
-                    MembershipFee = 0.0; // Default value for unknown membership types
+                    MembershipFee = 0.0; // Default value for unknown membership types  
                     break;
             }
             return MembershipFee * (EndDate - StartDate).TotalDays;
+        }
+
+        public double UpdateMembershipData(int membershipType, DateTime startDate, DateTime endDate)
+        {
+            MembershipType = membershipType;
+            StartDate = startDate;
+            EndDate = endDate;
+           
+
+            return MembershipFee * (EndDate - StartDate).TotalDays; 
         }
     }
 }
