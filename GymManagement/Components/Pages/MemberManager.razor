@@ -50,138 +50,138 @@
 <h3>@ErrorMessage</h3>
 
 <div class="row mt-4">
-   <div class="col-md-6 d-flex justify-content-between">
-       <button class="btn btn-success btn-lg neon-button neon-bg neon-text" @onclick="AddMemberAsync">Add Member</button>  
-       <button class="btn btn-primary btn-lg neon-button neon-bg neon-text" @onclick="UpdateMemberAsync">Update Member</button>  
-       <button class="btn btn-danger btn-lg neon-button neon-bg neon-text" @onclick="DeleteMemberAsync">Delete Member</button>  
-       <!--Documentation purposes-->
-       <button class="btn btn-info btn-lg neon-button neon-bg neon-text" @onclick="LoadMembers">Get Member Details</button>
-   </div>
+    <div class="col-md-6 d-flex justify-content-between">
+        <button class="btn btn-success btn-lg neon-button neon-bg neon-text" @onclick="AddMemberAsync">Add Member</button>  
+        <button class="btn btn-primary btn-lg neon-button neon-bg neon-text" @onclick="UpdateMemberAsync">Update Member</button>  
+        <button class="btn btn-danger btn-lg neon-button neon-bg neon-text" @onclick="DeleteMemberAsync">Delete Member</button>  
+        <!--Documentation purposes-->
+        <button class="btn btn-info btn-lg neon-button neon-bg neon-text" @onclick="LoadMembers">Get Member Details</button>
+    </div>
 </div>
 
 <table class="table table-striped table-hover mt-4 border shadow-lg neon-table">
-   <thead class="table-dark neon-text">
-       <tr>
-           <th>Membership ID</th>
-           <th>Member Name</th>
-           <th>Start Date</th>
-           <th>End Date</th>
-           <th>Membership Fee</th>
-       </tr>
-   </thead>
-   <tbody>
-       @foreach (var member in members)  
-       {  
-          <tr class="neon-text" @onclick="() => SelectMember(member)">  
-              <td>@member.MembershipID</td>  
-              <td>@member.MemberName</td>  
-              <td>@member.StartDate.ToShortDateString()</td>  
-              <td>@member.EndDate.ToShortDateString()</td>  
-              <td>@member.MembershipFee.ToString("C")</td>  
-          </tr>  
-       }
-   </tbody>
+    <thead class="table-dark neon-text">
+        <tr>
+            <th>Membership ID</th>
+            <th>Member Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Membership Fee</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in members)  
+        {  
+            <tr class="neon-text" @onclick="() => SelectMember(member)">  
+                <td>@member.MembershipID</td>  
+                <td>@member.MemberName</td>  
+                <td>@member.StartDate.ToShortDateString()</td>  
+                <td>@member.EndDate.ToShortDateString()</td>  
+                <td>@member.MembershipFee.ToString("C")</td>  
+            </tr>  
+        }
+    </tbody>
 </table>
 
 
 <style>
     .neon-text {
-        color: #ff073a;
-        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    color: #ff073a;
+    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
     }
 
     .neon-button {
-        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
-        transition: transform 0.2s ease-in-out;
+    box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+    transition: transform 0.2s ease-in-out;
     }
 
-        .neon-button:hover {
-            transform: scale(1.1);
-        }
+    .neon-button:hover {
+    transform: scale(1.1);
+    }
 
     .neon-bg {
-        background-color: #1a1a1a;
-        color: #ff073a;
-        border: 1px solid #ff073a;
+    background-color: #1a1a1a;
+    color: #ff073a;
+    border: 1px solid #ff073a;
     }
 
     .neon-input {
-        background-color: #1a1a1a;
-        color: #ff073a;
-        border: 1px solid #ff073a;
+    background-color: #1a1a1a;
+    color: #ff073a;
+    border: 1px solid #ff073a;
     }
 
-        .neon-input::placeholder {
-            color: #ff073a;
-        }
+    .neon-input::placeholder {
+    color: #ff073a;
+    }
 
     .neon-table {
-        background-color: #1a1a1a;
-        color: #ff073a;
-        border: 1px solid #ff073a;
+    background-color: #1a1a1a;
+    color: #ff073a;
+    border: 1px solid #ff073a;
     }
 
     .table-hover tbody tr:hover {
-        background-color: #2a2a2a;
+    background-color: #2a2a2a;
     }
 </style>
 
 <style>
     .neon-text {
-        color: #ff073a;
-        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    color: #ff073a;
+    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
     }
 
     .neon-button {
-        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
-        transition: transform 0.2s ease-in-out;
+    box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+    transition: transform 0.2s ease-in-out;
     }
 
-        .neon-button:hover {
-            transform: scale(1.1);
-        }
+    .neon-button:hover {
+    transform: scale(1.1);
+    }
 
     .form-label {
-        font-size: 1.1rem;
+    font-size: 1.1rem;
     }
 
     .form-control {
-        font-size: 1rem;
-        padding: 0.75rem;
+    font-size: 1rem;
+    padding: 0.75rem;
     }
 
     .table {
-        font-size: 1rem;
+    font-size: 1rem;
     }
 </style>
 
 
-@code {  
+@code {
 
-   /// <summary>  
-   /// Represents the currently selected or being edited member.  
-   /// </summary>  
-   private Member currentMember = new Member();  
+    /// <summary>  
+    /// Represents the currently selected or being edited member.  
+    /// </summary>  
+    private Member currentMember = new Member();  
 
-   /// <summary>  
-   /// Stores the list of all members loaded from the database.  
-   /// </summary>  
-   private List<Member> members = new List<Member>();  
+    /// <summary>  
+    /// Stores the list of all members loaded from the database.  
+    /// </summary>  
+    private List<Member> members = new List<Member>();  
 
-   /// <summary>  
-   /// Indicates whether certain UI elements are displayed.  
-   /// </summary>  
-   private bool IsDisplayed = false;  
+    /// <summary>  
+    /// Indicates whether certain UI elements are displayed.  
+    /// </summary>  
+    private bool IsDisplayed = false;  
 
-   /// <summary>  
-   /// Stores the selected membership type option.  
-   /// </summary>  
-   private int opition;  
+    /// <summary>  
+    /// Stores the selected membership type option.  
+    /// </summary>  
+    private int opition;  
 
-   /// <summary>  
-   /// Connection string used to connect to the MySQL database.  
-   /// </summary>  
-   private readonly string connectionString = new MySqlConnectionStringBuilder  
+    /// <summary>  
+    /// Connection string used to connect to the MySQL database.  
+    /// </summary>  
+    private readonly string connectionString = new MySqlConnectionStringBuilder  
    {  
        Server = "sql3.freesqldatabase.com",  
        UserID = "sql3774599",  
@@ -189,45 +189,45 @@
        Database = "sql3774599",  
    }.ToString();  
 
-   /// <summary>  
-   /// Stores error messages to display in the UI.  
-   /// </summary>  
-   private string ErrorMessage { get; set; }  
+    /// <summary>  
+    /// Stores error messages to display in the UI.  
+    /// </summary>  
+    private string ErrorMessage { get; set; }  
 
-   /// <summary>  
-   /// Adds a new member to the database and updates the local members list.  
-   /// Validates input and calculates the membership fee before saving.  
-   /// </summary>  
-   private async Task AddMemberAsync()  
-   {  
-       try  
-       {  
-           if (currentMember == null || string.IsNullOrWhiteSpace(currentMember.MemberName))  
-           {  
-               throw new InputIsNullException();  
-           }  
+    /// <summary>  
+    /// Adds a new member to the database and updates the local members list.  
+    /// Validates input and calculates the membership fee before saving.  
+    /// </summary>  
+    private async Task AddMemberAsync()  
+    {  
+        try  
+        {  
+            if (currentMember == null || string.IsNullOrWhiteSpace(currentMember.MemberName))  
+            {  
+                throw new InputIsNullException();  
+            }  
 
-           using (MySqlConnection connection = new MySqlConnection(connectionString))  
-           {  
-               await connection.OpenAsync();  
-               currentMember.MembershipType = opition;  
-               currentMember.MembershipFee = currentMember.CalculateMembershipFee();  
-               string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +  
-                              "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";  
+            using (MySqlConnection connection = new MySqlConnection(connectionString))  
+            {  
+                await connection.OpenAsync();  
+                currentMember.MembershipType = opition;  
+                currentMember.MembershipFee = currentMember.CalculateMembershipFee();  
+                string query = "INSERT INTO member (membershipid, membername, start, end, membershipfee) " +  
+                               "VALUES (@MembershipID, @MemberName, @StartDate, @EndDate, @MembershipFee)";  
 
-               using (MySqlCommand cmd = new MySqlCommand(query, connection))  
-               {  
-                   cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
-                   cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
-                   cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
-                   cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
-                   cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))  
+                {  
+                    cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+                    cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
+                    cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
+                    cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
+                    cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
 
-                   await cmd.ExecuteNonQueryAsync();  
-               }  
-           }  
+                    await cmd.ExecuteNonQueryAsync();  
+                }  
+            }  
 
-           members.Add(new Member  
+            members.Add(new Member  
            {  
                MembershipID = currentMember.MembershipID,  
                MemberName = currentMember.MemberName,  
@@ -236,42 +236,43 @@
                MembershipFee = currentMember.MembershipFee  
            });  
 
-           currentMember = new Member();  
-           ErrorMessage = string.Empty; // Clear any previous error messages  
-       }  
-       catch (InputIsNullException ex)  
-       {  
-           ErrorMessage = $"Invalid input: {ex.Message}";  
-       }  
-       catch (Exception ex)  
-       {  
-           ErrorMessage = $"An error occurred: {ex.Message}";  
-       }  
-   }  
+            currentMember = new Member();  
+            ErrorMessage = string.Empty; // Clear any previous error messages  
+        }  
+        catch (InputIsNullException ex)  
+        {  
+            ErrorMessage = $"Invalid input: {ex.Message}";  
+        }  
+        catch (Exception ex)  
+        {  
+            ErrorMessage = $"An error occurred: {ex.Message}";  
+        }  
+    }  
 
-   /// <summary>  
-   /// Updates an existing member's details in the database and the local members list.  
-   /// Ensures the database and UI remain in sync.  
-   /// </summary>  
-   private async Task UpdateMemberAsync()  
-   {  
-       using (MySqlConnection connection = new MySqlConnection(connectionString))  
-       {  
-           await connection.OpenAsync();  
+    /// <summary>  
+    /// Updates an existing member's details in the database and the local members list.  
+    /// Ensures the database and UI remain in sync.  
+    /// </summary>  
+    private async Task UpdateMemberAsync()  
+    {  
+        using (MySqlConnection connection = new MySqlConnection(connectionString))  
+        {  
+            await connection.OpenAsync();  
+            currentMember.MembershipType = opition;
+            currentMember.MembershipFee = currentMember.CalculateMembershipFee();
+            string query = "UPDATE member SET membername = @MemberName, start = @StartDate, end = @EndDate, membershipfee = @MembershipFee " +  
+                           "WHERE membershipid = @MembershipID";  
 
-           string query = "UPDATE member SET membername = @MemberName, start = @StartDate, end = @EndDate, membershipfee = @MembershipFee " +  
-                          "WHERE membershipid = @MembershipID";  
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))  
+            {  
+                cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
+                cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
+                cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
+                cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
+                cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
 
-           using (MySqlCommand cmd = new MySqlCommand(query, connection))  
-           {  
-               cmd.Parameters.AddWithValue("@MembershipID", currentMember.MembershipID);  
-               cmd.Parameters.AddWithValue("@MemberName", currentMember.MemberName);  
-               cmd.Parameters.AddWithValue("@StartDate", currentMember.StartDate);  
-               cmd.Parameters.AddWithValue("@EndDate", currentMember.EndDate);  
-               cmd.Parameters.AddWithValue("@MembershipFee", currentMember.MembershipFee);  
-
-               await cmd.ExecuteNonQueryAsync();  
-           }  
+                await cmd.ExecuteNonQueryAsync();
+            }  
        }  
 
        Member memberToUpdate = members.FirstOrDefault(m => m.MembershipID == currentMember.MembershipID);  
@@ -280,7 +281,7 @@
            memberToUpdate.MemberName = currentMember.MemberName;  
            memberToUpdate.StartDate = currentMember.StartDate;  
            memberToUpdate.EndDate = currentMember.EndDate;  
-           memberToUpdate.MembershipFee = currentMember.UpdateMembershipData(currentMember.MembershipType, currentMember.StartDate, currentMember.EndDate);
+           memberToUpdate.MembershipFee = currentMember.MembershipFee;
        }  
 
        currentMember = new Member();  
