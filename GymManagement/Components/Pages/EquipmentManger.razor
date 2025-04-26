@@ -47,7 +47,6 @@
     <div class="row mt-4">
         <div class="col-md-6 d-flex justify-content-between">
             <button class="btn btn-success btn-lg neon-button neon-bg neon-text" @onclick="AddEquipment">Add Equipment</button>
-            <button class="btn btn-primary btn-lg neon-button neon-bg neon-text" @onclick="UpdateEquipment">Update Equipment</button>
             <button class="btn btn-danger btn-lg neon-button neon-bg neon-text" @onclick="DeleteEquipment">Delete Equipment</button>
         </div>
     </div>
@@ -192,46 +191,6 @@
                    isAvailable = currentEquipment.isAvailable,  
                    lastMaintenanceDate = currentEquipment.lastMaintenanceDate  
                });  
-
-           currentEquipment = new Equipment();  
-           ErrorMessage = string.Empty;  
-       }  
-       catch (Exception ex)  
-       {  
-           ErrorMessage = $"Error: {ex.Message}";  
-       }  
-   }  
-
-   /// <summary>  
-   /// Updates an existing equipment record in the database and updates the local list.  
-   /// </summary>  
-   private void UpdateEquipment()  
-   {  
-       try  
-       {  
-           using (var connection = new MySqlConnection(connectionString))  
-           {  
-               connection.Open();  
-               string query = "UPDATE Equipment SET Name = @Name, Type = @Type, isAvailable = @Available, lastMaintenanceDate = @LastMaintenance WHERE equipmentID = @ID";  
-               using (var command = new MySqlCommand(query, connection))  
-               {  
-                   command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);  
-                   command.Parameters.AddWithValue("@Name", currentEquipment.Name);  
-                   command.Parameters.AddWithValue("@Type", currentEquipment.Type);  
-                   command.Parameters.AddWithValue("@Available", currentEquipment.isAvailable);  
-                   command.Parameters.AddWithValue("@LastMaintenance", currentEquipment.lastMaintenanceDate);  
-                   command.ExecuteNonQuery();  
-               }  
-           }  
-
-           var existing = equipmentList.FirstOrDefault(e => e.equipmentID == currentEquipment.equipmentID);  
-           if (existing != null)  
-           {  
-               existing.Name = currentEquipment.Name;  
-               existing.Type = currentEquipment.Type;  
-               existing.isAvailable = currentEquipment.isAvailable;  
-               existing.lastMaintenanceDate = currentEquipment.lastMaintenanceDate;  
-           }  
 
            currentEquipment = new Equipment();  
            ErrorMessage = string.Empty;  
