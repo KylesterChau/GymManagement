@@ -259,6 +259,9 @@
             cmd.Parameters.AddWithValue("@name", NewFeedbackName);
             cmd.Parameters.AddWithValue("@text", NewFeedbackText);
             cmd.ExecuteNonQuery();
+			connection.Close();
+
+			getFeedbacks();
 
             NewFeedbackName = string.Empty;
             NewFeedbackText = string.Empty;
