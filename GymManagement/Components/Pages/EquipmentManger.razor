@@ -29,9 +29,9 @@
     <div class="row mb-3">
         <div class="col-md-6">
             <label class="form-label fw-bold neon-text">Available:</label>
-            <select class="form-select neon-input" @bind="currentEquipment.isAvailable">
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+            <select class="form-select neon-input" @bind="available">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
             </select>
         </div>
     </div>
@@ -122,6 +122,8 @@
 </table>
 
 @code {  
+
+	private int available;
    /// <summary>  
    /// Represents the currently selected or being edited equipment.  
    /// </summary>  
@@ -165,6 +167,10 @@
        {  
            using (var connection = new MySqlConnection(connectionString))  
            {  
+				if (available == 1)
+					currentEquipment.isAvailable = true;
+				else
+					currentEquipment.isAvailable = false;
                connection.Open();  
                string query = "INSERT INTO Equipment (equipmentID, Name, Type, isAvailable, lastMaintenanceDate) VALUES (@ID, @Name, @Type, @Available, @LastMaintenance)";  
                using (var command = new MySqlCommand(query, connection))  
@@ -172,7 +178,7 @@
                    command.Parameters.AddWithValue("@ID", currentEquipment.equipmentID);  
                    command.Parameters.AddWithValue("@Name", currentEquipment.Name);  
                    command.Parameters.AddWithValue("@Type", currentEquipment.Type);  
-                   command.Parameters.AddWithValue("@Available", currentEquipment.isAvailable);  
+                   command.Parameters.AddWithValue("@Available", available);  
                    command.Parameters.AddWithValue("@LastMaintenance", currentEquipment.lastMaintenanceDate);  
                    command.ExecuteNonQuery();  
                }  
