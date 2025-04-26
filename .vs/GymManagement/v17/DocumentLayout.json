@@ -1,81 +1,81 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\spenc\\source\\repos\\GymManagement\\",
+  "WorkspaceRootPath": "C:\\Users\\Kyle\\GymManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\components\\pages\\reports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\components\\pages\\reports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\components\\pages\\reports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\components\\pages\\membermanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\components\\pages\\membermanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\components\\pages\\membermanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\exceptions\\inputisnullexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\exceptions\\inputisnullexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\exceptions\\inputisnullexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\components\\pages\\equipmentmanger.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\components\\pages\\equipmentmanger.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\components\\pages\\equipmentmanger.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\classes\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\classes\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\classes\\membership.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\exceptions\\membernotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\exceptions\\membernotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\exceptions\\membernotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\classes\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\classes\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\classes\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\classes\\appstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\classes\\appstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\classes\\appstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\classes\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\classes\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\classes\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\exceptions\\equipmentnotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\exceptions\\equipmentnotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\exceptions\\equipmentnotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\exceptions\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\exceptions\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\exceptions\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\spenc\\source\\repos\\gymmanagement\\gymmanagement\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|c:\\users\\kyle\\gymmanagement\\gymmanagement\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{C357F196-E4A0-4E0F-9B17-955FC26F11B9}|GymManagement\\GymManagement.csproj|solutionrelative:gymmanagement\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
@@ -100,9 +100,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "AppState.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Classes\\AppState.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Classes\\AppState.cs",
               "RelativeDocumentMoniker": "GymManagement\\Classes\\AppState.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Classes\\AppState.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Classes\\AppState.cs",
               "RelativeToolTip": "GymManagement\\Classes\\AppState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -112,37 +112,35 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MemberManager.razor",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Pages\\MemberManager.razor",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Pages\\MemberManager.razor",
               "RelativeDocumentMoniker": "GymManagement\\Components\\Pages\\MemberManager.razor",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Pages\\MemberManager.razor",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Pages\\MemberManager.razor",
               "RelativeToolTip": "GymManagement\\Components\\Pages\\MemberManager.razor",
               "ViewState": "AgIAAEkAAAAAAAAAAAAtwNwAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-24T06:24:23.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T06:24:23.708Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "InputIsNullException.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Exceptions\\InputIsNullException.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Exceptions\\InputIsNullException.cs",
               "RelativeDocumentMoniker": "GymManagement\\Exceptions\\InputIsNullException.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Exceptions\\InputIsNullException.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Exceptions\\InputIsNullException.cs",
               "RelativeToolTip": "GymManagement\\Exceptions\\InputIsNullException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T06:42:44.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T06:42:44.981Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Reports.razor",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Pages\\Reports.razor",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Pages\\Reports.razor",
               "RelativeDocumentMoniker": "GymManagement\\Components\\Pages\\Reports.razor",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Pages\\Reports.razor",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Pages\\Reports.razor",
               "RelativeToolTip": "GymManagement\\Components\\Pages\\Reports.razor",
-              "ViewState": "AgIAANwAAAAAAAAAAAAowCQBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANkAAAAAAAAAAAAowCQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-20T22:40:37.489Z",
               "EditorCaption": ""
@@ -151,35 +149,33 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Pages\\Home.razor",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "GymManagement\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "GymManagement\\Components\\Pages\\Home.razor",
               "ViewState": "AgIAALsAAAAAAAAAAAAAAMoAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-24T06:23:08.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T06:23:08.846Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Equipment.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Classes\\Equipment.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Classes\\Equipment.cs",
               "RelativeDocumentMoniker": "GymManagement\\Classes\\Equipment.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Classes\\Equipment.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Classes\\Equipment.cs",
               "RelativeToolTip": "GymManagement\\Classes\\Equipment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T06:42:35.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T06:42:35.85Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Member.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Classes\\Member.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Classes\\Member.cs",
               "RelativeDocumentMoniker": "GymManagement\\Classes\\Member.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Classes\\Member.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Classes\\Member.cs",
               "RelativeToolTip": "GymManagement\\Classes\\Member.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAwwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -189,9 +185,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "EquipmentNotFoundException.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Exceptions\\EquipmentNotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Exceptions\\EquipmentNotFoundException.cs",
               "RelativeDocumentMoniker": "GymManagement\\Exceptions\\EquipmentNotFoundException.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Exceptions\\EquipmentNotFoundException.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Exceptions\\EquipmentNotFoundException.cs",
               "RelativeToolTip": "GymManagement\\Exceptions\\EquipmentNotFoundException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -201,9 +197,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "NavMenu.razor.css",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Layout\\NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Layout\\NavMenu.razor.css",
               "RelativeDocumentMoniker": "GymManagement\\Components\\Layout\\NavMenu.razor.css",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Layout\\NavMenu.razor.css",
               "RelativeToolTip": "GymManagement\\Components\\Layout\\NavMenu.razor.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -213,74 +209,69 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Layout\\NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "GymManagement\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "GymManagement\\Components\\Layout\\NavMenu.razor",
               "ViewState": "AgIAAA8AAAAAAAAAAAAqwDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-20T22:46:29.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T22:46:29.851Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Layout\\MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "GymManagement\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Layout\\MainLayout.razor",
               "RelativeToolTip": "GymManagement\\Components\\Layout\\MainLayout.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T19:14:00.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T19:14:00.566Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "MemberNotFoundException.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Exceptions\\MemberNotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Exceptions\\MemberNotFoundException.cs",
               "RelativeDocumentMoniker": "GymManagement\\Exceptions\\MemberNotFoundException.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Exceptions\\MemberNotFoundException.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Exceptions\\MemberNotFoundException.cs",
               "RelativeToolTip": "GymManagement\\Exceptions\\MemberNotFoundException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T01:53:02.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-21T01:53:02.196Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Membership.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Classes\\Membership.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Classes\\Membership.cs",
               "RelativeDocumentMoniker": "GymManagement\\Classes\\Membership.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Classes\\Membership.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Classes\\Membership.cs",
               "RelativeToolTip": "GymManagement\\Classes\\Membership.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T22:54:16.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T22:54:16.312Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "EquipmentManger.razor",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Pages\\EquipmentManger.razor",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Pages\\EquipmentManger.razor",
               "RelativeDocumentMoniker": "GymManagement\\Components\\Pages\\EquipmentManger.razor",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Pages\\EquipmentManger.razor",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Pages\\EquipmentManger.razor",
               "RelativeToolTip": "GymManagement\\Components\\Pages\\EquipmentManger.razor",
               "ViewState": "AgIAAA4BAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-20T22:38:33.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T22:38:33.147Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "globalusings.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Exceptions\\globalusings.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Exceptions\\globalusings.cs",
               "RelativeDocumentMoniker": "GymManagement\\Exceptions\\globalusings.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Exceptions\\globalusings.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Exceptions\\globalusings.cs",
               "RelativeToolTip": "GymManagement\\Exceptions\\globalusings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -290,9 +281,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "GymManagement\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\MainPage.xaml.cs",
               "RelativeToolTip": "GymManagement\\MainPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -302,9 +293,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\App.xaml",
               "RelativeDocumentMoniker": "GymManagement\\App.xaml",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\App.xaml",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\App.xaml",
               "RelativeToolTip": "GymManagement\\App.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
@@ -314,9 +305,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\MainPage.xaml",
               "RelativeDocumentMoniker": "GymManagement\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\MainPage.xaml",
               "RelativeToolTip": "GymManagement\\MainPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
@@ -326,9 +317,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "MainLayout.razor.css",
-              "DocumentMoniker": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Layout\\MainLayout.razor.css",
+              "DocumentMoniker": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Layout\\MainLayout.razor.css",
               "RelativeDocumentMoniker": "GymManagement\\Components\\Layout\\MainLayout.razor.css",
-              "ToolTip": "C:\\Users\\spenc\\source\\repos\\GymManagement\\GymManagement\\Components\\Layout\\MainLayout.razor.css",
+              "ToolTip": "C:\\Users\\Kyle\\GymManagement\\GymManagement\\Components\\Layout\\MainLayout.razor.css",
               "RelativeToolTip": "GymManagement\\Components\\Layout\\MainLayout.razor.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",

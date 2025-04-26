@@ -82,72 +82,72 @@ else
 
 <style>
     .neon-text {
-        color: #ff073a;
-        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    color: #ff073a;
+    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
     }
 
     .neon-button {
-        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
-        transition: transform 0.2s ease-in-out;
+    box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+    transition: transform 0.2s ease-in-out;
     }
 
-        .neon-button:hover {
-            transform: scale(1.1);
-        }
+    .neon-button:hover {
+    transform: scale(1.1);
+    }
 
     .neon-bg {
-        background-color: #1a1a1a;
-        color: #ff073a;
-        border: 1px solid #ff073a;
+    background-color: #1a1a1a;
+    color: #ff073a;
+    border: 1px solid #ff073a;
     }
 
     .neon-input {
-        background-color: #1a1a1a;
-        color: #ff073a;
-        border: 1px solid #ff073a;
+    background-color: #1a1a1a;
+    color: #ff073a;
+    border: 1px solid #ff073a;
     }
 
-        .neon-input::placeholder {
-            color: #ff073a;
-        }
+    .neon-input::placeholder {
+    color: #ff073a;
+    }
 
     .neon-table {
-        background-color: #1a1a1a;
-        color: #ff073a;
-        border: 1px solid #ff073a;
+    background-color: #1a1a1a;
+    color: #ff073a;
+    border: 1px solid #ff073a;
     }
 
     .table-hover tbody tr:hover {
-        background-color: #2a2a2a;
+    background-color: #2a2a2a;
     }
 </style>
 
 <style>
     .neon-text {
-        color: #ff073a;
-        text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+    color: #ff073a;
+    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
     }
 
     .neon-button {
-        box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
-        transition: transform 0.2s ease-in-out;
+    box-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 20px #ff073a;
+    transition: transform 0.2s ease-in-out;
     }
 
-        .neon-button:hover {
-            transform: scale(1.1);
-        }
+    .neon-button:hover {
+    transform: scale(1.1);
+    }
 
     .form-label {
-        font-size: 1.1rem;
+    font-size: 1.1rem;
     }
 
     .form-control {
-        font-size: 1rem;
-        padding: 0.75rem;
+    font-size: 1rem;
+    padding: 0.75rem;
     }
 
     .table {
-        font-size: 1rem;
+    font-size: 1rem;
     }
 </style>
 
@@ -155,10 +155,30 @@ else
     /// <summary>
     /// Created By Kyle Chau
     /// </summary>
+
+    ///<summary>
+    /// Stores the message to be displayed when login fails.
+    /// </summary>
     private string failureMessage;
+
+    ///<summary>
+    /// Checks if the user is viewing members or equipment.
+    /// </summary>
     private bool viewMembers = true;
+
+    ///<summary>
+    /// Stores a list of members retrieved from the database.
+    /// </summary>
     private List<Member> members = new List<Member>();
+
+    ///<summary>
+    /// Stores a list of equipment retrieved from the database.
+    /// </summary>
     private List<Equipment> equipment = new List<Equipment>();
+
+    ///<summary>
+    /// Stores the connection string builder for the MySQL database.
+    /// </summary>
     private MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
         {
             Server = "sql3.freesqldatabase.com",
@@ -166,8 +186,10 @@ else
             Password = "4SbFn7kpp9",
             Database = "sql3774599",
         };
-    // Method checks for if the username and password exist in the login table and that they are stored in the same row to access the rest of the application
-    private void OnLoginClicked()
+    ///<summary>
+    /// Checks if the user has entered a valid username and password that matches the database.
+    /// </summary>
+	private void OnLoginClicked()
     {
         MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
         connection.Open();
@@ -187,13 +209,18 @@ else
         }
         connection.Close();
     }
-    //Triggers upon initialization of the page
-   protected override void OnInitialized()
+    ///<summary>
+	/// Initizalizes the component and retrieves the members and equipment data from the database.
+	/// </summary>
+	protected override void OnInitialized()
     {
         getMembers();
         getEquipment();
     }
-    //Method to get all the members from the database when the initialization of the page is triggered
+    /// <summary>
+    /// Loads all members from the database into the local members list.
+    /// This method is called during initialization to populate the UI.
+    /// </summary>
     private void getMembers()
     {
         using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
@@ -221,7 +248,11 @@ else
             }
         }
     }
-	//Method to get all the equipment from the database when the initialization of the page is triggered
+
+    /// <summary>
+    /// Loads all equipment from the database into the local equipments list.
+    /// This method is called during initialization to populate the UI.
+    /// </summary>
     private void getEquipment()
     {
         using (MySqlConnection connection = new MySqlConnection(builder.ConnectionString))
